@@ -1,9 +1,55 @@
 <h3>Publications</h3>
-<p>
-	<h3>2020</h3>
-		<ul>
-			<li>
-				...
-			</li>
-		</ul>
-</p>
+
+<div id="bibtex_errors"></div>
+
+<div class="bibtex_structure">
+  <div class="group year" extra="DESC number">
+      <div class="templates"></div>
+  </div>
+</div>
+
+<div id="bibtex_display">
+  
+  <div class="bibtex_template">
+    <ul><li>
+      
+      <div class="if author">
+        <span class="author"></span>.
+      </div>
+      
+      <span class="if title">
+        <a class="url">
+	    <span class="title"></span>.
+	</a>
+      </span>
+
+      <div>
+        <span class="if journal"><em><span class="journal"></span></em>,</span>
+        <span class="if booktitle"><em><span class="booktitle"></span></em>,</span>
+        <span class="if volume">vol. <span class="volume"></span>,</span> 
+        <span class="if number">no. <span class="number"></span>,</span> 
+        <span class="if pages">pages <em><span class="pages"></span></em>,</span>
+        <span class="if publisher"><span class="publisher"></span>,</span>
+        <span class="if year"><span class="year"></span>.</span>
+      </div>
+      
+      <div>
+        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY" bibtexjs-css-escape>
+          [bib]
+        </a>
+      </div>
+      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+      <div class="well">
+        <pre><span class="bibtexraw noread"></span></pre>
+      </div>
+    </div>
+    <div style="display:none"><span class="bibtextype"></span></div>
+      
+    </li></ul>
+  </div>
+  
+</div>
+
+<script>
+    setTimeout(bibtex_js_draw, 100);
+</script>
