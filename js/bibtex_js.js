@@ -1299,11 +1299,11 @@ if (!window.jQuery || !window.moment) {
 
     // Start polling...
     checkReady(function($) {
-        //createWebPage(defaultTemplate);
+        createWebPage(defaultTemplate);
     });
 } else {
     // Create the webpage
-    //createWebPage(defaultTemplate);
+    createWebPage(defaultTemplate);
 }
 
 var latex_to_unicode = {
