@@ -24,4 +24,4 @@ jobs:
           pip install requests pyyaml
 
       - name: Fetch Zotero publications
-        run: python scripts/fetch_zotero.py
+        run: python scripts/zotero.py
