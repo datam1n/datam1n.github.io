@@ -1,4 +1,7 @@
 - DOI: 10.14428/esann/2021.ES2021-27
+  authors:
+  - Attila Mester
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Attila
@@ -11,6 +14,8 @@
     methods
   url: https://www.esann.org/sites/default/files/proceedings/2021/ES2021-27.pdf
 - DOI: https://doi.org/10.1007/978-3-030-68527-0_13
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -25,6 +30,10 @@
   title: Fake News Detection Without External Knowledge
   url: https://link.springer.com/chapter/10.1007/978-3-030-68527-0_13
 - DOI: ''
+  authors:
+  - Csanád Sándor
+  - Szabolcs Pável
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Csanád
@@ -39,6 +48,10 @@
   title: Pruning CNN's with linear filter ensembles
   url: ''
 - DOI: ''
+  authors:
+  - Anna Kiss
+  - Csaba Sulyok
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Anna
@@ -53,6 +66,10 @@
   title: Region Prediction from Hungarian Folk Music Using Convolutional Neural Networks
   url: https://link.springer.com/chapter/10.1007/978-3-030-30490-4_47
 - DOI: ''
+  authors:
+  - Csaba Sulyok
+  - Christopher Harte
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Csaba
@@ -67,6 +84,10 @@
   title: On the impact of domain-specific knowledge in evolutionary music composition
   url: https://dl.acm.org/doi/abs/10.1145/3321707.3321710
 - DOI: 10.1007/978-3-030-30508-6_2
+  authors:
+  - Szabolcs Pável
+  - Csanád Sándor
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Szabolcs
@@ -93,6 +114,10 @@
   title: Distortion Estimation Through Explicit Modeling of the Refractive Surface
   url: https://doi.org/10.1007/978-3-030-30508-6_2
 - DOI: 10.1109/IJCNN.2019.8852065
+  authors:
+  - Szabolcs-Botond Lőrincz
+  - Szabolcs Pável
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Szabolcs-Botond
@@ -107,6 +132,8 @@
   title: Single View Distortion Correction using Semantic Guidance
   url: https://doi.org/10.1109/IJCNN.2019.8852065
 - DOI: ''
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -115,6 +142,9 @@
   title: A CiteSeerX-Based Dataset for Record Linkage and Metadata Extraction
   url: https://ieeexplore.ieee.org/abstract/document/8750698/
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Eszter Szilágyi
   creators:
   - creatorType: author
     firstName: Zalán
@@ -127,6 +157,9 @@
     experiments in genre classification
   url: http://www.acta.sapientia.ro/acta-info/C10-2/info102-2.pdf
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -138,6 +171,9 @@
   title: A hybrid approach for scholarly information extraction
   url: http://www.cs.ubbcluj.ro/ studia-i/journal/journal/article/view/10/9
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Bipin Indurkhya
   creators:
   - creatorType: author
     firstName: Zalán
@@ -149,6 +185,11 @@
   title: Software categorization using low-level distributional features
   url: ''
 - DOI: ''
+  authors:
+  - Cătălin F. Perțicas
+  - Bipin Indurkhya
+  - Răzvan V. Florian
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Cătălin F.
@@ -172,6 +213,10 @@
   title: Finding Patterns in Visualizations of Programs
   url: http://ppig.org/library/paper/finding-patterns-visualizations-programs
 - DOI: ''
+  authors:
+  - Annamária Szenkovits
+  - Noémi Gaskó
+  - Hunor Jakab
   creators:
   - creatorType: author
     firstName: Annamária
@@ -187,6 +232,9 @@
     evolution
   url: https://ieeexplore.ieee.org/document/7829614
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -198,6 +246,9 @@
   title: A note on label propagation for semi-supervised learning
   url: https://content.sciendo.com/downloadpdf/journals/ausi/7/1/article-p18.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -209,6 +260,10 @@
   title: Sparse approximations to value functions in reinforcement learning
   url: https://link.springer.com/chapter/10.1007/978-3-319-09903-3_14
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -223,6 +278,9 @@
   title: Simulation-Extrapolation Gaussian Processes for Input Noise Modeling
   url: ''
 - DOI: 10.1016/j.neucom.2013.11.039
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -234,6 +292,9 @@
   title: Linear spectral hashing
   url: ''
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -245,6 +306,8 @@
   title: Augmented hashing for semi-supervised scenarios
   url: ''
 - DOI: ''
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -253,6 +316,10 @@
   title: Fordítóprogramok szerkesztése Flex és Bison segítségével
   url: https://eda.eme.ro/handle/10598/28426
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
+  - Jan Peters
   creators:
   - creatorType: author
     firstName: Botond
@@ -267,6 +334,8 @@
   title: Indirect robot model learning for tracking control
   url: ''
 - DOI: ''
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -275,6 +344,9 @@
   title: Gépi tanulás gráfokkal
   url: http://honlap.eotvos.elte.hu/wp-content/uploads/2016/02/informatikusok.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -287,6 +359,9 @@
     learning
   url: https://link.springer.com/chapter/10.1007/978-3-642-40728-4_22
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -298,6 +373,10 @@
   title: Linear spectral hashing
   url: ''
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
+  - Jan Peters
   creators:
   - creatorType: author
     firstName: Botond
@@ -312,6 +391,9 @@
   title: Alignment-based transfer learning for robot models
   url: https://ieeexplore.ieee.org/abstract/document/6706721/
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -323,6 +405,9 @@
   title: Hessian corrected input noise models
   url: https://link.springer.com/chapter/10.1007/978-3-642-40728-4_1
 - DOI: 10.1109/IJCNN.2012.6252742
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -334,6 +419,11 @@
   title: Improving kernel locality-sensitive hashing using pre-images and bounds
   url: ''
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Philipp Hennig
+  - Lehel Csató
+  - Jan Peters
   creators:
   - creatorType: author
     firstName: Botond
@@ -351,6 +441,9 @@
   title: Learning tracking control with forward models
   url: http://is.tuebingen.mpg.de/fileadmin/user_upload/files/publications/2012/ICRA-2012-Bocsi.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -362,6 +455,9 @@
   title: Manifold-based non-parametric learning of action-value functions.
   url: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2012-179.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -373,6 +469,8 @@
   title: Reinforcement learning with guided policy search using Gaussian processes
   url: https://ieeexplore.ieee.org/document/6252509
 - DOI: ''
+  authors:
+  - Botond Bócsi
   creators:
   - creatorType: author
     firstName: Botond
@@ -381,6 +479,8 @@
   title: Model Learning for Robot Control
   url: ''
 - DOI: ''
+  authors:
+  - Hunor Jakab
   creators:
   - creatorType: author
     firstName: Hunor
@@ -390,6 +490,10 @@
     Interaction
   url: ''
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Zsolt Minier
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -404,6 +508,8 @@
   title: Active learning with clustering
   url: http://www.jmlr.org/proceedings/papers/v16/bodo11a/bodo11a.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
   creators:
   - creatorType: author
     firstName: Hunor
@@ -412,6 +518,9 @@
   title: A lengő Atwood gép vezérlése megerősítéses tanulással
   url: ''
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -424,6 +533,10 @@
     algorithms
   url: https://link.springer.com/chapter/10.1007/978-3-642-21738-8_29
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Botond Bócsi
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -438,6 +551,9 @@
   title: Non-parametric value function approximation in robotics
   url: ''
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -449,6 +565,12 @@
   title: Guided exploration in gradient based policy search with Gaussian
   url: ''
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Duy Nguyen-Tuong
+  - Lehel Csató
+  - Bernhard Schoelkopf
+  - Jan Peters
   creators:
   - creatorType: author
     firstName: Botond
@@ -469,6 +591,8 @@
   title: Learning inverse kinematics with structured prediction
   url: http://is.tuebingen.mpg.de/fileadmin/user_upload/files/publications/2011/IROS-2011-Bocsi.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
   creators:
   - creatorType: author
     firstName: Hunor
@@ -478,6 +602,11 @@
     approximation
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2011-3/c63-Jakab.pdf
 - DOI: 10.1016/j.cageo.2010.05.008
+  authors:
+  - Remi Louis Barillec
+  - Ben Ingram
+  - Dan Cornford
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Remi Louis
@@ -496,6 +625,10 @@
     of large datasets with heterogeneous noise'
   url: https://doi.org/10.1016/j.cageo.2010.05.008
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
+  - Jan Peters
   creators:
   - creatorType: author
     firstName: Botond
@@ -510,6 +643,9 @@
   title: Structured output Gaussian processes
   url: ''
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -521,6 +657,9 @@
   title: Reinforcement Learning Algorithms in Robotics
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2011-2/b13-BocsiCsato.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -532,6 +671,9 @@
   title: Using Gaussian processes for variance reduction in policy gradient algorithms
   url: http://icai.ektf.hu/pdf/ICAI2010-vol1-pp87-94.pdf
 - DOI: 10.15837/ijccc.2010.4.2496
+  authors:
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -543,6 +685,10 @@
   title: Hierarchical and reweighting cluster kernels for semi-supervised learning
   url: ''
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -557,6 +703,9 @@
   title: Nonparametric methods in robotics
   url: ''
 - DOI: ''
+  authors:
+  - Lehel Csató
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Lehel
@@ -568,6 +717,9 @@
   title: Decomposition methods for label propagation
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -579,6 +731,8 @@
   title: Dirichlet process-based component detection in state-space models.
   url: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2009-107.pdf
 - DOI: ''
+  authors:
+  - Zsolt Minier
   creators:
   - creatorType: author
     firstName: Zsolt
@@ -587,6 +741,8 @@
   title: Feature Selection in Text Categorization Using l1-Regularized SVMs
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
 - DOI: ''
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -595,6 +751,9 @@
   title: Semi-supervised Learning with Kernels
   url: http://www.cs.ubbcluj.ro/ zbodo/thesis/thesis.pdf
 - DOI: ''
+  authors:
+  - Hunor Jakab
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Hunor
@@ -606,6 +765,9 @@
   title: Q-learning and policy gradient methods
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Zsolt Minier
   creators:
   - creatorType: author
     firstName: Zalán
@@ -617,6 +779,9 @@
   title: Semi-supervised learning with SVMs
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Zsolt Minier
   creators:
   - creatorType: author
     firstName: Zalán
@@ -628,6 +793,9 @@
   title: On supervised and semi-supervised k-nearest neighbor algorithms
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2008-2/07-Bodo.pdf
 - DOI: ''
+  authors:
+  - Botond Bócsi
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Botond
@@ -639,6 +807,9 @@
   title: Visual tracking with filtering algorithms
   url: ''
 - DOI: ''
+  authors:
+  - Lehel Csató
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Lehel
@@ -650,6 +821,8 @@
   title: Neurális hálók és a gépi tanulás módszerei
   url: ''
 - DOI: 10.1109/ICCP.2008.4648348
+  authors:
+  - Zalán Bodó
   creators:
   - creatorType: author
     firstName: Zalán
@@ -658,6 +831,10 @@
   title: Hierarchical cluster kernels for supervised and semi-supervised learning
   url: ''
 - DOI: ''
+  authors:
+  - Zalán Bodó
+  - Zsolt Minier
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zalán
@@ -672,6 +849,9 @@
   title: Text categorization experiments using Wikipedia
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2007-kept/207-BodoMinierCsato.pdf
 - DOI: ''
+  authors:
+  - Zsolt Minier
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zsolt
@@ -683,6 +863,10 @@
   title: Kernel PCA based clustering for inducing features in text categorization.
   url: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2007-97.pdf
 - DOI: 10.1109/SYNASC.2007.8
+  authors:
+  - Zsolt Minier
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zsolt
@@ -697,6 +881,10 @@
   title: Wikipedia-based Kernels for text categorization
   url: ''
 - DOI: ''
+  authors:
+  - Zsolt Minier
+  - Zalán Bodó
+  - Lehel Csató
   creators:
   - creatorType: author
     firstName: Zsolt
