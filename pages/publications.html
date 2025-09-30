@@ -7,3 +7,35 @@ permalink: "/publications"
 
 <h3>Publications</h3>
 
+<div class="row" style="display: flex; flex-wrap: wrap;">
+    {% for pub in site.data.zotero %}
+    <div class="col-sm-4">
+    <div class="card" style="margin-bottom: 40px;">
+      <div class="card-body">
+        <h5 class="card-title">
+            {% if pub.url %}
+                <a target="_blank" href="{{ pub.url }}">{{ pub.title }}</a>
+            {% else %}
+                {{ pub.title }}
+            {% endif %}
+        </h5>
+        <p class="card-text">
+            {% if pub.authors %}
+                <b>Authors:</b>
+                {% for author in pub.authors %}
+                    {{ author }}{% if forloop.last == false %}, {% endif %}
+                {% endfor %}
+                <br>
+            {% endif %}
+            {% if pub.date %}
+                <b>Year:</b> {{ pub.date }}<br>
+            {% endif %}
+        </p>
+      </div>
+    </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+

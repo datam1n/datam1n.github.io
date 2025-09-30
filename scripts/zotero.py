@@ -28,13 +28,16 @@ def fetch_zotero(yml_path):
     print(f"Fetched {len(bibs)} items from Zotero.")
     print(f"Writing to {yml_path}")
 
-    # save only title, url, date, authors
     bibs = [{
         "DOI": bib["data"].get("DOI", ""),
         "title": bib["data"].get("title", ""),
         "url": bib["data"].get("url", ""),
         "date": bib["data"].get("date", ""),
         "creators": bib["data"].get("creators", []),
+        "authors": [
+            f"{creator.get('firstName', '')} {creator.get('lastName', '')}"
+            for creator in bib["data"].get("creators", [])
+            if creator.get("creatorType", "") == "author"]
     } for bib in bibs]
 
     with open(yml_path, "w") as f:
