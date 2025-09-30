@@ -6,47 +6,73 @@ permalink: "/members"
 ---
 
 <h3>Members</h3>
-<p>
-<ul>
-    <li>
-        Lehel Csató 
-            <a href="http://www.cs.ubbcluj.ro/~csatol/">[homepage]</a> 
-            <a href="https://scholar.google.ro/citations?user=ilqynywAAAAJ&hl=hu">[Google Scholar]</a> 
-            <a href="https://www.researchgate.net/profile/Lehel_Csato">[ResearchGate]</a> 
-            <a href="https://dblp.uni-trier.de/pers/c/Csat=oacute=:Lehel.html">[DBLP]</a> 
-            [ORCID]
-    </li>
-    <li>
-        Zalán Bodó 
-            <a href="http://www.cs.ubbcluj.ro/~zbodo/">[homepage]</a> 
-            <a href="https://scholar.google.ro/citations?user=di9KjJ8AAAAJ&hl=hu">[Google Scholar]</a> 
-            <a href="https://www.researchgate.net/profile/Zalan_Bodo">[ResearchGate]</a> 
-            <a href="https://dblp.uni-trier.de/pers/b/Bod=oacute=:Zal=aacute=n.html">[DBLP]</a> 
-            <a href="https://orcid.org/0000-0002-4857-878X">[ORCID]</a>
-    </li>
-    <li>
-        Zsolt Darvay 
-            <a href="http://www.cs.ubbcluj.ro/~darvay/">[homepage]</a> 
-            <a href="https://scholar.google.com/citations?user=X6G610cAAAAJ&hl=hu">[Google Scholar]</a> 
-            <a href="https://www.researchgate.net/profile/Zsolt_Darvay">[ResearchGate]</a> 
-            <a href="https://dblp.uni-trier.de/pers/d/Darvay:Zsolt.html">[DBLP]</a> 
-            <a href="https://orcid.org/0000-0003-1094-9837">[ORCID]</a>
-    </li>
-    <li>
-        Sándor Kolumbán 
-            [homepage] 
-            <a href="https://scholar.google.com/citations?user=_JgiA0oAAAAJ&hl=hu">[Google Scholar]</a> 
-            <a href="https://www.researchgate.net/profile/Sandor_Kolumban">[ResearchGate]</a> 
-            <a href="https://dblp.uni-trier.de/pers/k/Kolumb=aacute=n:S=aacute=ndor.html">[DBLP]</a> 
-            <a href="https://orcid.org/0000-0001-9017-0801">[ORCID]</a>
-    </li>
-    <li>
-        Csaba Sulyok 
-            [homepage] 
-            <a href="https://scholar.google.ro/citations?user=NCWQw7UAAAAJ&hl=hu">[Google Scholar]</a> 
-            <a href="https://www.researchgate.net/profile/Csaba_Sulyok">[ResearchGate]</a> 
-            <a href="https://dblp.uni-trier.de/pers/s/Sulyok:Csaba.html">[DBLP]</a> 
-            <a href="https://orcid.org/0000-0002-1760-2054">[ORCID]</a>
-    </li>
-</ul>
-</p>
+
+<div class="row" style="display: flex; flex-wrap: wrap;">
+
+    {% for member in site.data.members %}
+    <div class="col-sm-4">
+
+    <div class="card" style="margin-bottom: 40px;">
+      <div class="card-body">
+        <h5 class="card-title">{{ member.name }}</h5>
+        <p class="card-text">
+            {% if member.homepage %}
+                <a href="{{ member.homepage }}">Homepage</a>
+            {% endif %}
+        </p>
+
+      </div>
+    </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+<!--<p>-->
+<!--<ul>-->
+<!--    <li>-->
+<!--        Lehel Csató -->
+<!--            <a href="http://www.cs.ubbcluj.ro/~csatol/">[homepage]</a> -->
+<!--            <a href="https://scholar.google.ro/citations?user=ilqynywAAAAJ&hl=hu">[Google Scholar]</a> -->
+<!--            <a href="https://www.researchgate.net/profile/Lehel_Csato">[ResearchGate]</a> -->
+<!--            <a href="https://dblp.uni-trier.de/pers/c/Csat=oacute=:Lehel.html">[DBLP]</a> -->
+<!--            [ORCID]-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        Zalán Bodó -->
+<!--            <a href="http://www.cs.ubbcluj.ro/~zbodo/">[homepage]</a> -->
+<!--            <a href="https://scholar.google.ro/citations?user=di9KjJ8AAAAJ&hl=hu">[Google Scholar]</a> -->
+<!--            <a href="https://www.researchgate.net/profile/Zalan_Bodo">[ResearchGate]</a> -->
+<!--            <a href="https://dblp.uni-trier.de/pers/b/Bod=oacute=:Zal=aacute=n.html">[DBLP]</a> -->
+<!--            <a href="https://orcid.org/0000-0002-4857-878X">[ORCID]</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        Zsolt Darvay -->
+<!--            <a href="http://www.cs.ubbcluj.ro/~darvay/">[homepage]</a> -->
+<!--            <a href="https://scholar.google.com/citations?user=X6G610cAAAAJ&hl=hu">[Google Scholar]</a> -->
+<!--            <a href="https://www.researchgate.net/profile/Zsolt_Darvay">[ResearchGate]</a> -->
+<!--            <a href="https://dblp.uni-trier.de/pers/d/Darvay:Zsolt.html">[DBLP]</a> -->
+<!--            <a href="https://orcid.org/0000-0003-1094-9837">[ORCID]</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        Sándor Kolumbán -->
+<!--            [homepage] -->
+<!--            <a href="https://scholar.google.com/citations?user=_JgiA0oAAAAJ&hl=hu">[Google Scholar]</a> -->
+<!--            <a href="https://www.researchgate.net/profile/Sandor_Kolumban">[ResearchGate]</a> -->
+<!--            <a href="https://dblp.uni-trier.de/pers/k/Kolumb=aacute=n:S=aacute=ndor.html">[DBLP]</a> -->
+<!--            <a href="https://orcid.org/0000-0001-9017-0801">[ORCID]</a>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        Csaba Sulyok -->
+<!--            [homepage] -->
+<!--            <a href="https://scholar.google.ro/citations?user=NCWQw7UAAAAJ&hl=hu">[Google Scholar]</a> -->
+<!--            <a href="https://www.researchgate.net/profile/Csaba_Sulyok">[ResearchGate]</a> -->
+<!--            <a href="https://dblp.uni-trier.de/pers/s/Sulyok:Csaba.html">[DBLP]</a> -->
+<!--            <a href="https://orcid.org/0000-0002-1760-2054">[ORCID]</a>-->
+<!--    </li>-->
+<!--</ul>-->
+<!--</p>-->
