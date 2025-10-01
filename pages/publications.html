@@ -4,6 +4,25 @@ title:
 description:
 permalink: "/publications"
 ---
+<style>
+.card-highlight {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.card-highlight > span {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.card-title a {
+  color: inherit;
+  text-decoration: none;
+  font: inherit;
+}
+</style>
 
 <h3>Publications</h3>
 
@@ -13,22 +32,34 @@ permalink: "/publications"
     <div class="card" style="margin-bottom: 40px;">
       <div class="card-body">
         <h5 class="card-title">
-            {% if pub.url %}
-                <a target="_blank" href="{{ pub.url }}">{{ pub.title }}</a>
+            {% assign title_words = pub.title | split: ' ' %}
+            {% if title_words.size > 5 %}
+                {% assign short_title = title_words | slice: 0, 5 | join: ' ' | append: ' ...' %}
             {% else %}
-                {{ pub.title }}
+                {% assign short_title = pub.title %}
+            {% endif %}
+
+            {% if pub.url and pub.url != '' %}
+                <a target="_blank" href="{{ pub.url }}" title="{{ pub.title }}">{{ short_title }}</a>
+            {% else %}
+                {{ short_title }}
             {% endif %}
         </h5>
+
+          {% if pub.date %}
+        <p class="card-highlight">
+            <span>{{ pub.date }}</span>
+        </p>
+          {% endif %}
+
         <p class="card-text">
             {% if pub.authors %}
-                <b>Authors:</b>
+                <span>
                 {% for author in pub.authors %}
                     {{ author }}{% if forloop.last == false %}, {% endif %}
                 {% endfor %}
+                </span>
                 <br>
-            {% endif %}
-            {% if pub.date %}
-                <b>Year:</b> {{ pub.date }}<br>
             {% endif %}
         </p>
       </div>
