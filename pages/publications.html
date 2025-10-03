@@ -31,14 +31,14 @@ permalink: "/publications"
     div.year-row-delimiter {
         height: 0px;
         width: calc(100% + 0px);
-        border-top: 1px solid #eff0f1;
+        border-top: 1px solid transparent;
         position: relative;
         margin: 10px 0 35px 0;
     }
     div.year-row-delimiter > h4 {
         position: absolute;
         top: 5px;
-        right: 0;
+        right: -18px;
         color: lightgray;
     }
 </style>
@@ -74,10 +74,10 @@ permalink: "/publications"
 <div>
     {% for year in pubs_by_year %}
     <div class="year-row-delimiter">
-        <h4 id="pubs-{{ year.name }}">{{ year.name }}</h4>
+        <h4 id="pubs-{{ year.name }}">{{ year.name }}&nbsp;&nbsp;•</h4>
     </div>
 
-    <div class="row" style="display: flex; flex-wrap: wrap;">
+    <div class="row" style="display: flex; flex-wrap: wrap; border-right: 2px solid lightgray">
         {% for pub in year.items %}
         <div class="col-sm-4">
             <div class="card" style="margin-bottom: 20px;">
