@@ -5,68 +5,118 @@ description:
 permalink: "/publications"
 ---
 <style>
-.card-highlight {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-}
+    html {
+       scroll-behavior: smooth;
+    }
+    .card-highlight {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+    }
 
-.card-highlight > span {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 3px 5px;
-    border-radius: 5px;
-}
-.card-title a {
-  color: inherit;
-  text-decoration: none;
-  font: inherit;
-}
+    .card-highlight > span {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 3px 5px;
+        border-radius: 5px;
+    }
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+      font: inherit;
+    }
+    h4[id] {
+      scroll-margin-top: 108px;
+    }
+    div.year-row-delimiter {
+        height: 0px;
+        width: calc(100% + 0px);
+        border-top: 1px solid #eff0f1;
+        position: relative;
+        margin: 10px 0 35px 0;
+    }
+    div.year-row-delimiter > h4 {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        color: lightgray;
+    }
 </style>
+<script>
+    $(function() {
+        $('body')
+            .attr('data-spy', 'scroll')
+            .attr('data-target', '#navbar-year-pubs')
+            .attr('data-offset', '110')
+            .attr('tabindex', '0')
+            .css('position', 'relative');
+    });
+</script>
+
 
 <h3>Publications</h3>
 
-<div class="row" style="display: flex; flex-wrap: wrap;">
-    {% for pub in site.data.zotero %}
-    <div class="col-sm-4">
-    <div class="card" style="margin-bottom: 40px;">
-      <div class="card-body">
-        <h5 class="card-title">
-            {% assign title_words = pub.title | split: ' ' %}
-            {% if title_words.size > 5 %}
-                {% assign short_title = title_words | slice: 0, 5 | join: ' ' | append: ' ...' %}
-            {% else %}
-                {% assign short_title = pub.title %}
-            {% endif %}
+{% assign pubs_by_year = site.data.zotero | group_by_exp: "pub", "pub.date | slice: 0, 4" %}
 
-            {% if pub.url and pub.url != '' %}
-                <a target="_blank" href="{{ pub.url }}" title="{{ pub.title }}">{{ short_title }}</a>
-            {% else %}
-                {{ short_title }}
-            {% endif %}
-        </h5>
+<nav id="navbar-year-pubs" class="navbar navbar-light bg-light px-3"
+     style="position: sticky; top: 0; z-index: 1000; margin-bottom: 20px">
+    <ul class="nav nav-pills">
+        {% for year in pubs_by_year %}
+        <li class="nav-item">
+            <a class="nav-link {% if foorloop.first %} active{% endif %}" href="#pubs-{{ year.name }}">{{ year.name
+                }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
 
-          {% if pub.date %}
-        <p class="card-highlight">
-            <span>{{ pub.date }}</span>
-        </p>
-          {% endif %}
-
-        <p class="card-text">
-            {% if pub.authors %}
-                <span>
-                {% for author in pub.authors %}
-                    {{ author }}{% if forloop.last == false %}, {% endif %}
-                {% endfor %}
-                </span>
-                <br>
-            {% endif %}
-        </p>
-      </div>
-    </div>
+<!--<div data-spy="scroll" data-target="#navbar-year-pubs" data-offset="0" tabindex="0" style="position: relative;">-->
+<div>
+    {% for year in pubs_by_year %}
+    <div class="year-row-delimiter">
+        <h4 id="pubs-{{ year.name }}">{{ year.name }}</h4>
     </div>
 
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+        {% for pub in year.items %}
+        <div class="col-sm-4">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {% assign title_words = pub.title | split: ' ' %}
+                        {% if title_words.size > 5 %}
+                        {% assign short_title = title_words | slice: 0, 5 | join: ' ' | append: ' ...' %}
+                        {% else %}
+                        {% assign short_title = pub.title %}
+                        {% endif %}
+
+                        {% if pub.url and pub.url != '' %}
+                        <a target="_blank" href="{{ pub.url }}" title="{{ pub.title }}">{{ short_title }}</a>
+                        {% else %}
+                        {{ short_title }}
+                        {% endif %}
+                    </h5>
+
+                    <!--                      {% if pub.date %}-->
+                    <!--                        <p class="card-highlight">-->
+                    <!--                            <span>{{ pub.date }}</span>-->
+                    <!--                        </p>-->
+                    <!--                      {% endif %}-->
+
+                    <p class="card-text">
+                        {% if pub.authors %}
+                        <span>
+                            {% for author in pub.authors %}
+                                {{ author }}{% if forloop.last == false %}, {% endif %}
+                            {% endfor %}
+                            </span>
+                        <br>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
     {% endfor %}
-
 </div>
-
