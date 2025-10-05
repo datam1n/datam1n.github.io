@@ -4,6 +4,9 @@ title:
 description:
 permalink: "/publications"
 ---
+
+<h3>Publications</h3>
+
 <style>
     html {
        scroll-behavior: smooth;
@@ -54,7 +57,7 @@ permalink: "/publications"
 </script>
 
 
-<h3>Publications</h3>
+
 
 {% assign pubs_by_year = site.data.zotero | group_by_exp: "pub", "pub.date | slice: 0, 4" %}
 
