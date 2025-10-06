@@ -1,0 +1,55 @@
+<div class="card" style="margin-bottom: 40px;">
+    <div class="card-body ">
+
+        <div class="d-flex align-items-start justify-content-between">
+
+            <h5 class="card-title">{{ include.member.name }}</h5>
+
+            <div style="margin-left: 0px;">
+                {% if include.member.image %}
+                <img src="{{ include.member.image }}" alt="{{ include.member.name }}"
+                     class="rounded-circle shadow-sm"
+                     style="width: 100px; height: 100px; object-fit: cover;">
+                {% else %}
+                <img src="/assets/img/default_profile.png" alt="Default profile"
+                     class="rounded-circle shadow-sm"
+                     style="width: 100px; height: 100px; object-fit: cover; opacity: 0.7;">
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="flex-grow-1">
+                {% if include.member.homepage %}
+                <a href="{{ include.member.homepage }}" target="_blank" rel="noopener" title="Homepage">
+                    <img src="https://www.ubbcluj.ro/template/favicon-32x32.png">
+                </a>
+                {% endif %}
+
+                {% if include.member.researchgate %}
+                <a href="{{ include.member.researchgate }}" target="_blank" rel="noopener" title="ResearchGate">
+                    <img src="https://c5.rgstatic.net/m/41542880220916/images/favicon/favicon-32x32.png">
+                </a>
+                {% endif %}
+
+                {% if include.member.orcid %}
+                <a href="{{ include.member.orcid }}" target="_blank" rel="noopener" title="ORCID">
+                    <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" width=32 height=32>
+                </a>
+                {% endif %}
+
+                {% if include.member.dblp %}
+                <a href="{{ include.member.dblp }}" target="_blank" rel="noopener" title="DBLP">
+                    <img src="https://dblp.uni-trier.de/img/favicon.ico" width=32 height=32>
+                </a>
+                {% endif %}
+
+                {% if include.member.scholar %}
+                <a href="{{ include.member.scholar }}" target="_blank" rel="noopener" title="Google Scholar">
+                    <img src="https://scholar.google.com/favicon.ico" width=32 height=32>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
