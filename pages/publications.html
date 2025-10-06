@@ -5,7 +5,15 @@ description:
 permalink: "/publications"
 ---
 
-<h3>Publications</h3>
+<h3>Publications
+    <span style="font-size: 0.6em; font-weight: normal;">
+        (download as:
+            <b><a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=bibtex" download="DataMin.bibtex">bibtex</a>
+            <a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=csv" download="DataMin.csv">csv</a>
+            </b>
+        )
+    </span>
+</h3>
 
 <style>
     html {
@@ -33,7 +41,7 @@ permalink: "/publications"
     }
     div.year-row-delimiter {
         height: 0px;
-        width: calc(100% + 0px);
+        width: calc(100% - 17px);
         border-top: 1px solid transparent;
         position: relative;
         margin: 10px 0 35px 0;
@@ -80,7 +88,7 @@ permalink: "/publications"
         <h4 id="pubs-{{ year.name }}">{{ year.name }}&nbsp;&nbsp;•</h4>
     </div>
 
-    <div class="row" style="display: flex; flex-wrap: wrap; border-right: 2px solid lightgray">
+    <div class="row" style="display: flex; flex-wrap: wrap; border-right: 2px solid lightgray; width: calc(100% + 13px)">
         {% for pub in year.items %}
         <div class="col-sm-4">
             <div class="card" style="margin-bottom: 20px;">
