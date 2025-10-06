@@ -7,27 +7,41 @@ permalink: "/members"
 
 <h3>Members</h3>
 
-<div class="row" style="display: flex; flex-wrap: wrap;">
+<nav class="nav nav-pills nav-justified" id="membersTab" role="tablist" style="margin-bottom: 20px;">
+  <a class="nav-item nav-link active" href="#xai" id="xai-tab" data-toggle="tab">XAI</a>
+  <a class="nav-item nav-link disabled" href="#alumni" id="alumni-tab" data-toggle="tab">Alumni</a>
+</nav>
 
-    {% for member in site.data.members %}
-    <div class="col-sm-4">
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="xai" role="tabpanel" aria-labelledby="xai-tab">
+        <div class="row" style="display: flex; flex-wrap: wrap;">
 
-    <div class="card" style="margin-bottom: 40px;">
-      <div class="card-body">
-        <h5 class="card-title">{{ member.name }}</h5>
-        <p class="card-text">
-            {% if member.homepage %}
-                <a href="{{ member.homepage }}">Homepage</a>
-            {% endif %}
-        </p>
+            {% for member in site.data.members %}
+            <div class="col-sm-4">
 
-      </div>
-    </div>
+            <div class="card" style="margin-bottom: 40px;">
+              <div class="card-body">
+                <h5 class="card-title">{{ member.name }}</h5>
+                <p class="card-text">
+                    {% if member.homepage %}
+                        <a href="{{ member.homepage }}">Homepage</a>
+                    {% endif %}
+                </p>
 
-    </div>
+              </div>
+            </div>
+
+        </div>
 
     {% endfor %}
 
+</div>
+    </div>
+
+
+    <div class="tab-pane fade" id="alumni" role="tabpanel" aria-labelledby="alumni-tab">
+
+    </div>
 </div>
 
 
