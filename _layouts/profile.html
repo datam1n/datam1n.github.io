@@ -3,26 +3,14 @@ layout: default
 ---
 <link rel="stylesheet" href="/assets/css/publications.css">
 
-
-{% comment %}
-{% assign slug = page.profileurl | split: '/' | last | replace: '.html', '' %}
 {% assign all_members = site.data.members.xai | concat: site.data.members.alumni | concat: site.data.members.others %}
-{% assign member = null %}
-{% for m in all_members %}
-{% assign m_slug = m.name | slugify: 'latin' %}
-{% if m_slug == slug %}
-{% assign member = m %}
-{% endif %}
-{% endfor %}
-{% endcomment %}
-
-{% assign all_members = site.data.members.xai | concat: site.data.members.alumni | concat: site.data.members.others %}
-{% assign pubs_of_member = site.data.zotero | where_exp: "pub", "pub.authors contains page.profile.name" %}
+{% assign profile = all_members | where: "name", page.name | first %}
+{% assign pubs_of_member = site.data.zotero | where_exp: "pub", "pub.authors contains profile.name" %}
 
 <div>
     <div class="d-flex justify-content-center">
         <div style="position: relative; width: 140px; height: 70px; z-index: 1;">
-            {% assign image_src =page.profileimage | default: '/assets/img/default_profile.png' %}
+            {% assign image_src = profile.image | default: '/assets/img/default_profile.png' %}
             <img src="{{ image_src }}"
                  class="rounded-circle shadow-sm"
                  style="width: 140px; height: 140px; object-fit: cover; position: absolute; top: 0px; left: 0; right: 0; margin: auto;">
@@ -31,33 +19,33 @@ layout: default
     </div>
     <div class="card" style="padding-top: 70px">
         <div class="card-body text-center">
-            <h2 class="card-title">{{page.profile.name }}</h2>
+            <h2 class="card-title">{{profile.name }}</h2>
 
             <hr>
 
             <div class="mb-3">
-                {% if page.profile.homepage %}
-                <a href="{{page.profile.homepage }}" target="_blank" rel="noopener" title="Homepage">
+                {% if profile.homepage %}
+                <a href="{{profile.homepage }}" target="_blank" rel="noopener" title="Homepage">
                     <img src="https://www.ubbcluj.ro/template/favicon-32x32.png">
                 </a>
                 {% endif %}
-                {% if page.profile.researchgate %}
-                <a href="{{page.profile.researchgate }}" target="_blank" rel="noopener" title="ResearchGate">
+                {% if profile.researchgate %}
+                <a href="{{profile.researchgate }}" target="_blank" rel="noopener" title="ResearchGate">
                     <img src="https://c5.rgstatic.net/m/41542880220916/images/favicon/favicon-32x32.png">
                 </a>
                 {% endif %}
-                {% if page.profile.orcid %}
-                <a href="{{page.profile.orcid }}" target="_blank" rel="noopener" title="ORCID">
+                {% if profile.orcid %}
+                <a href="{{profile.orcid }}" target="_blank" rel="noopener" title="ORCID">
                     <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" width=32 height=32>
                 </a>
                 {% endif %}
-                {% if page.profile.dblp %}
-                <a href="{{page.profile.dblp }}" target="_blank" rel="noopener" title="DBLP">
+                {% if profile.dblp %}
+                <a href="{{profile.dblp }}" target="_blank" rel="noopener" title="DBLP">
                     <img src="https://dblp.uni-trier.de/img/favicon.ico" width=32 height=32>
                 </a>
                 {% endif %}
-                {% if page.profile.scholar %}
-                <a href="{{page.profiles.cholar }}" target="_blank" rel="noopener" title="Google Scholar">
+                {% if profile.scholar %}
+                <a href="{{profile.scholar }}" target="_blank" rel="noopener" title="Google Scholar">
                     <img src="https://scholar.google.com/favicon.ico" width=32 height=32>
                 </a>
                 {% endif %}

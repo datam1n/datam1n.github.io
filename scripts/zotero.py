@@ -3,9 +3,7 @@ import os
 import requests
 import yaml
 
-
-def get_project_root():
-    return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from scripts.util import get_project_root
 
 
 def fetch_zotero(yml_path):
@@ -25,8 +23,7 @@ def fetch_zotero(yml_path):
 
         bibs.extend(bib)
         start += limit
-    print(f"Fetched {len(bibs)} items from Zotero.")
-    print(f"Writing to {yml_path}")
+    print(f"Fetched {len(bibs)} items from Zotero. Writing to {yml_path}")
 
     bibs = [{
         "DOI": bib["data"].get("DOI", ""),

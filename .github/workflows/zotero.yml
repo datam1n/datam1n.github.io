@@ -24,7 +24,7 @@ jobs:
           pip install -r scripts/requirements.txt
 
       - name: Fetch Zotero publications
-        run: python scripts/zotero.py
+        run: python -m scripts.zotero
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v6
