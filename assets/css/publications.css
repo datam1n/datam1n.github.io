@@ -1,0 +1,16 @@
+.card-highlight {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.card-highlight > span {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.card-title a {
+  color: inherit;
+  font: inherit;
+}

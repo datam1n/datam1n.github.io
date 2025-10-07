@@ -8,8 +8,9 @@ permalink: "/members"
 <h3>Members</h3>
 
 <nav class="nav nav-pills nav-justified" id="membersTab" role="tablist" style="margin-bottom: 20px;">
-  <a class="nav-item nav-link active" href="#xai" id="xai-tab" data-toggle="tab">XAI</a>
-  <a class="nav-item nav-link" href="#alumni" id="alumni-tab" data-toggle="tab">Alumni</a>
+    <a class="nav-item nav-link active" href="#xai" id="xai-tab" data-toggle="tab">XAI</a>
+    <a class="nav-item nav-link" href="#alumni" id="alumni-tab" data-toggle="tab">Alumni</a>
+    <a class="nav-item nav-link" href="#others" id="others-tab" data-toggle="tab">Others</a>
 </nav>
 
 <div class="tab-content">
@@ -30,6 +31,18 @@ permalink: "/members"
         <div class="row" style="display: flex; flex-wrap: wrap;">
 
             {% for member in site.data.members.alumni %}
+            <div class="col-sm-4">
+                {% include components/member_card.html member=member %}
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="tab-pane fade show" id="others" role="tabpanel" aria-labelledby="others-tab">
+        <div class="row" style="display: flex; flex-wrap: wrap;">
+
+            {% for member in site.data.members.others %}
             <div class="col-sm-4">
                 {% include components/member_card.html member=member %}
             </div>

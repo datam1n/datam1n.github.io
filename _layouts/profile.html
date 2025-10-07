@@ -1,0 +1,83 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="/assets/css/publications.css">
+
+
+{% comment %}
+{% assign slug = page.profileurl | split: '/' | last | replace: '.html', '' %}
+{% assign all_members = site.data.members.xai | concat: site.data.members.alumni | concat: site.data.members.others %}
+{% assign member = null %}
+{% for m in all_members %}
+{% assign m_slug = m.name | slugify: 'latin' %}
+{% if m_slug == slug %}
+{% assign member = m %}
+{% endif %}
+{% endfor %}
+{% endcomment %}
+
+{% assign all_members = site.data.members.xai | concat: site.data.members.alumni | concat: site.data.members.others %}
+{% assign pubs_of_member = site.data.zotero | where_exp: "pub", "pub.authors contains page.profile.name" %}
+
+<div>
+    <div class="d-flex justify-content-center">
+        <div style="position: relative; width: 140px; height: 70px; z-index: 1;">
+            {% assign image_src =page.profileimage | default: '/assets/img/default_profile.png' %}
+            <img src="{{ image_src }}"
+                 class="rounded-circle shadow-sm"
+                 style="width: 140px; height: 140px; object-fit: cover; position: absolute; top: 0px; left: 0; right: 0; margin: auto;">
+        </div>
+
+    </div>
+    <div class="card" style="padding-top: 70px">
+        <div class="card-body text-center">
+            <h2 class="card-title">{{page.profile.name }}</h2>
+
+            <hr>
+
+            <div class="mb-3">
+                {% if page.profile.homepage %}
+                <a href="{{page.profile.homepage }}" target="_blank" rel="noopener" title="Homepage">
+                    <img src="https://www.ubbcluj.ro/template/favicon-32x32.png">
+                </a>
+                {% endif %}
+                {% if page.profile.researchgate %}
+                <a href="{{page.profile.researchgate }}" target="_blank" rel="noopener" title="ResearchGate">
+                    <img src="https://c5.rgstatic.net/m/41542880220916/images/favicon/favicon-32x32.png">
+                </a>
+                {% endif %}
+                {% if page.profile.orcid %}
+                <a href="{{page.profile.orcid }}" target="_blank" rel="noopener" title="ORCID">
+                    <img src="https://orcid.org/assets/vectors/orcid.logo.icon.svg" width=32 height=32>
+                </a>
+                {% endif %}
+                {% if page.profile.dblp %}
+                <a href="{{page.profile.dblp }}" target="_blank" rel="noopener" title="DBLP">
+                    <img src="https://dblp.uni-trier.de/img/favicon.ico" width=32 height=32>
+                </a>
+                {% endif %}
+                {% if page.profile.scholar %}
+                <a href="{{page.profiles.cholar }}" target="_blank" rel="noopener" title="Google Scholar">
+                    <img src="https://scholar.google.com/favicon.ico" width=32 height=32>
+                </a>
+                {% endif %}
+            </div>
+
+            {% assign pubs_count = pubs_of_member | size %}
+            {% if pubs_count > 0 %}
+            <hr>
+            <h4>Publications</h4>
+            <div class="mb-3" style="text-align: left">
+                <div class="row"
+                     style="display: flex; flex-wrap: wrap">
+                    {% for pub in pubs_of_member %}
+                    <div class="col-sm-4">
+                        {% include components/publication_card.html pub=pub all_members=all_members year_label=true %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

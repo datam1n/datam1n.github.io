@@ -2,3 +2,22 @@ theme: jekyll-theme-cayman
 title:
 description:
 google_analytics: G-SX2JNM68GQ
+plugins:
+  - jekyll-datapage-generator
+page_gen-dirs: false
+page_gen:
+  - data: 'members.xai'
+    template: 'profile'
+    name: 'name'
+    dir: 'members'
+    page_data_prefix: 'profile'
+  - data: 'members.alumni'
+    template: 'profile'
+    name: 'name'
+    dir: 'members'
+    page_data_prefix: 'profile'
+  - data: 'members.others'
+    template: 'profile'
+    name: 'name'
+    dir: 'members'
+    page_data_prefix: 'profile'

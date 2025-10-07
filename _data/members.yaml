@@ -1,46 +1,114 @@
 xai:
   - name: Lehel Csató
     homepage: http://www.cs.ubbcluj.ro/~csatol/
-    scholar: https://scholar.google.ro/citations?user=ilqynywAAAAJ&hl=hu
-    researchgate: https://www.researchgate.net/profile/Lehel_Csato
-    orcid: https://orcid.org/0000-0003-1052-1849
+    scholar: https://scholar.google.ro/citations?user=ilqynywAAAAJ
+    researchgate: https://www.researchgate.net/profile/Lehel-Csato
 
-    dblp: https://dblp.uni-trier.de/pers/c/Csat=oacute=:Lehel.html
+    orcid: https://orcid.org/0000-0003-1052-1849
+    dblp: https://dblp.org/pid/92/1986.html
+
 
   - name: Zalán Bodó
     homepage: http://www.cs.ubbcluj.ro/~zbodo/
-    scholar: https://scholar.google.ro/citations?user=di9KjJ8AAAAJ&hl=hu
-    researchgate: https://www.researchgate.net/profile/Zalan_Bodo
+    scholar: https://scholar.google.com/citations?user=di9KjJ8AAAAJ
+    researchgate: https://www.researchgate.net/profile/Zalan-Bodo
     orcid: https://orcid.org/0000-0002-4857-878X
-    dblp: https://dblp.uni-trier.de/pid/34/6474.html
+    dblp: https://dblp.org/pid/34/6474.html
 
   - name: Annamária Szenkovits
+    scholar: https://scholar.google.com/citations?user=_sQuIiIAAAAJ
+    researchgate: https://www.researchgate.net/profile/Annamaria-Szenkovits
+    orcid: https://orcid.org/0009-0001-8579-6962
+    dblp: https://dblp.org/pid/177/6236.html
+
   - name: Csanád Sándor
+    scholar: https://scholar.google.com/citations?user=jnRxWm8AAAAJ
+    researchgate: https://www.researchgate.net/profile/Csanad-Sandor
+    orcid: https://orcid.org/0000-0001-6666-0114
+    dblp: https://dblp.org/pid/248/5775.html
+
   - name: Adél Bajcsi
+    scholar: https://scholar.google.com/citations?user=mZO4HrsAAAAJ
+    researchgate: https://www.researchgate.net/profile/Adel-Bajcsi
+    orcid: https://orcid.org/0009-0007-9620-8584
+    dblp: https://dblp.org/pid/306/9831.html
+
   - name: Attila Mester
+    scholar: https://scholar.google.com/citations?user=LxED3kQAAAAJ
+    researchgate: https://www.researchgate.net/profile/Attila-Mester-2
+    orcid: https://orcid.org/0000-0002-2251-5107
+    dblp: https://dblp.org/pid/321/1385.html
+
   - name: Ábel Portik
+    scholar: https://scholar.google.com/citations?user=aUqq0DEAAAAJ
+    researchgate: https://www.researchgate.net/profile/Abel-Portik
+    orcid: https://orcid.org/0009-0005-3496-9703
+
   - name: Hanna-Georgina Lieb
+    scholar: https://scholar.google.com/citations?user=rBsT0MsAAAAJ
+    researchgate: https://www.researchgate.net/profile/Hanna-Georgina-Lieb
+    dblp: https://dblp.org/pid/369/2831.html
+
   - name: Hunor Ács
-  - name: Zsombor Boga
   - name: Ditmár Máté
 
+
 alumni:
+  - name: Szabolcs Pável
+    scholar: https://scholar.google.com/citations?user=kkFmy5MAAAAJ
+    researchgate: https://www.researchgate.net/profile/Szabolcs-Pavel
+    orcid: https://orcid.org/0000-0002-8825-2768
+    dblp: https://dblp.org/pid/248/5588.html
+
+  - name: Zsombor Boga
+    researchgate: https://www.researchgate.net/profile/Zsombor-Boga
+    orcid: https://orcid.org/0009-0000-7458-000X
+
+  - name: Hunor Jakab
+    scholar: https://scholar.google.ro/citations?user=MDTm0usAAAAJ
+    researchgate: https://www.researchgate.net/profile/Hunor-Jakab
+    dblp: https://dblp.org/pid/36/9736.html
+
+  - name: Botond Bócsi
+    scholar: https://scholar.google.ro/citations?user=Gk7hzFUAAAAJ
+    researchgate: https://www.researchgate.net/profile/Botond-Bocsi-2
+    dblp: https://dblp.org/pid/57/10331.html
+
+  - name: Zsolt Minier
+    researchgate: https://www.researchgate.net/profile/Zsolt-Minier-2
+    dblp: https://dblp.org/pid/33/417.html
+
+  - name: Anna Bajcsi
+
+  - name: Orsolya Vas
+
+  - name: Tamás Kaszta
+
+others:
   - name: Zsolt Darvay
     homepage: http://www.cs.ubbcluj.ro/~darvay/
-    scholar: https://scholar.google.com/citations?user=X6G610cAAAAJ&hl=hu
+    scholar: https://scholar.google.com/citations?user=X6G610cAAAAJ
     researchgate: https://www.researchgate.net/profile/Zsolt_Darvay
     orcid: https://orcid.org/0000-0003-1094-9837
-    dblp: https://dblp.uni-trier.de/pers/d/Darvay:Zsolt.html
+    dblp: https://dblp.org/pid/176/2269.html
 
   - name: Sándor Kolumbán
-    scholar: https://scholar.google.com/citations?user=_JgiA0oAAAAJ&hl=hu
-    researchgate: https://www.researchgate.net/profile/Sandor_Kolumban
+    scholar: https://scholar.google.com/citations?user=_JgiA0oAAAAJ
+    researchgate: https://www.researchgate.net/profile/Sandor-Kolumban
     orcid: https://orcid.org/0000-0001-9017-0801
-    dblp: https://dblp.uni-trier.de/pers/k/Kolumb=aacute=n:S=aacute=ndor.html
+    dblp: https://dblp.org/pid/14/10269.html
 
   - name: Csaba Sulyok
-    scholar: https://scholar.google.ro/citations?user=NCWQw7UAAAAJ&hl=hu
-    researchgate: https://www.researchgate.net/profile/Csaba_Sulyok
+    scholar: https://scholar.google.com/citations?user=OFq0ge4AAAAJ
+    researchgate: https://www.researchgate.net/profile/Csaba-Sulyok
     orcid: https://orcid.org/0000-0002-1760-2054
-    dblp: https://dblp.uni-trier.de/pers/s/Sulyok:Csaba.html
+    dblp: https://dblp.org/pid/207/4412.html
 
+  - name: Balázs Vass
+    scholar: https://scholar.google.com/citations?user=YeoziL8AAAAJ
+    researchgate: https://www.researchgate.net/profile/Balazs-Vass
+    orcid: https://orcid.org/0000-0002-8589-7165
+    dblp: https://dblp.org/pid/185/5700.html
+
+  - name: Attila Dobai-Pataky
+    dblp: https://dblp.org/pid/413/6237.html

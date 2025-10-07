@@ -8,31 +8,20 @@ permalink: "/publications"
 <h3 style="position: relative">Publications
     <span style="font-size: 0.6em; font-weight: normal; right: 0; position: absolute; top: 10px;">
         download as:
-            <b><a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=bibtex" download="DataMin.bibtex">bibtex</a>
-            <a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=csv" download="DataMin.csv">csv</a></b>
+            <b>
+                <a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=bibtex"
+                   download="DataMin.bibtex">bibtex</a>
+                <a href="https://api.zotero.org/groups/2770680/collections/YREG49H9/items?format=csv"
+                   download="DataMin.csv">csv</a>
+            </b>
     </span>
 </h3>
+
+<link rel="stylesheet" href="/assets/css/publications.css">
 
 <style>
     html {
        scroll-behavior: smooth;
-    }
-    .card-highlight {
-        position: absolute;
-        top: -2px;
-        right: -2px;
-    }
-
-    .card-highlight > span {
-        background: white;
-        border: 1px solid #ddd;
-        padding: 3px 5px;
-        border-radius: 5px;
-    }
-    .card-title a {
-      color: inherit;
-      text-decoration: none;
-      font: inherit;
     }
     h4[id] {
       scroll-margin-top: 108px;
@@ -62,10 +51,8 @@ permalink: "/publications"
     });
 </script>
 
-
-
-
 {% assign pubs_by_year = site.data.zotero | group_by_exp: "pub", "pub.date | slice: 0, 4" %}
+{% assign all_members = site.data.members.xai | concat: site.data.members.alumni | concat: site.data.members.others %}
 
 <nav id="navbar-year-pubs" class="navbar navbar-light bg-light px-3"
      style="position: sticky; top: 0; z-index: 1000; margin-bottom: 20px">
@@ -79,51 +66,17 @@ permalink: "/publications"
     </ul>
 </nav>
 
-<!--<div data-spy="scroll" data-target="#navbar-year-pubs" data-offset="0" tabindex="0" style="position: relative;">-->
 <div>
     {% for year in pubs_by_year %}
     <div class="year-row-delimiter">
         <h4 id="pubs-{{ year.name }}">{{ year.name }}&nbsp;&nbsp;•</h4>
     </div>
 
-    <div class="row" style="display: flex; flex-wrap: wrap; border-right: 2px solid lightgray; width: calc(100% + 13px)">
+    <div class="row"
+         style="display: flex; flex-wrap: wrap; border-right: 2px solid lightgray; width: calc(100% + 13px)">
         {% for pub in year.items %}
         <div class="col-sm-4">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {% assign title_words = pub.title | split: ' ' %}
-                        {% if title_words.size > 5 %}
-                        {% assign short_title = title_words | slice: 0, 5 | join: ' ' | append: ' ...' %}
-                        {% else %}
-                        {% assign short_title = pub.title %}
-                        {% endif %}
-
-                        {% if pub.url and pub.url != '' %}
-                        <a target="_blank" href="{{ pub.url }}" title="{{ pub.title }}">{{ short_title }}</a>
-                        {% else %}
-                        {{ short_title }}
-                        {% endif %}
-                    </h5>
-
-                    <!--                      {% if pub.date %}-->
-                    <!--                        <p class="card-highlight">-->
-                    <!--                            <span>{{ pub.date }}</span>-->
-                    <!--                        </p>-->
-                    <!--                      {% endif %}-->
-
-                    <p class="card-text">
-                        {% if pub.authors %}
-                        <span>
-                            {% for author in pub.authors %}
-                                {{ author }}{% if forloop.last == false %}, {% endif %}
-                            {% endfor %}
-                            </span>
-                        <br>
-                        {% endif %}
-                    </p>
-                </div>
-            </div>
+            {% include components/publication_card.html pub=pub all_members=all_members %}
         </div>
         {% endfor %}
     </div>

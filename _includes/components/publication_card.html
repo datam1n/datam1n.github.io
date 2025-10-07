@@ -1,0 +1,41 @@
+<div class="card" style="margin-bottom: 20px;">
+    <div class="card-body">
+        <h5 class="card-title">
+            {% assign title_words = pub.title | split: ' ' %}
+            {% if title_words.size > 5 %}
+            {% assign short_title = title_words | slice: 0, 5 | join: ' ' | append: ' ...' %}
+            {% else %}
+            {% assign short_title = pub.title %}
+            {% endif %}
+
+            {% if pub.url and pub.url != '' %}
+            <a target="_blank" href="{{ pub.url }}" title="{{ pub.title }}">{{ short_title }}</a>
+            {% else %}
+            {{ short_title }}
+            {% endif %}
+        </h5>
+
+        {% if include.year_label==true and pub.date %}
+        <p class="card-highlight">
+            <span>{{ pub.date }}</span>
+        </p>
+        {% endif %}
+
+        <p class="card-text">
+            {% if pub.authors %}
+            <span>
+            {% for author in pub.authors %}
+                {% assign author_profile = all_members | where: "name", author | first %}
+                {% if author_profile %}
+                    {% assign author_slug = author | slugify: 'latin' %}
+                    <a href="/members/{{ author_slug }}">{{ author }}</a>{% if forloop.last == false %}, {% endif %}
+                {% else %}
+                    {{ author }}{% if forloop.last == false %}, {% endif %}
+                {% endif %}
+            {% endfor %}
+            </span>
+            <br>
+            {% endif %}
+        </p>
+    </div>
+</div>
