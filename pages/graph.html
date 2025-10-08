@@ -1,0 +1,286 @@
+---
+layout: graph
+title:
+description:
+permalink: "/graph"
+---
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+    #svg-container {
+        width: 100%;
+        height: 0px;
+        overflow: auto;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        position: relative;
+      }
+    svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .link {
+        stroke: #ccc;
+        stroke-opacity: 0.6;
+    }
+
+    .node circle {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
+
+    text {
+        font-size: 11px;
+        pointer-events: none;
+        font-weight: bold;
+    }
+    .zoom-controls {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
+    .zoom-controls button {
+        margin: 2px;
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+</style>
+
+<div id="svg-container">
+    <svg></svg>
+</div>
+
+
+<script>
+    const publications = {{ site.data.zotero | jsonify }};
+    const members_a = {{ site.data.members.xai | jsonify }};
+    const members_b = {{ site.data.members.alumni | jsonify }};
+    const members_c = {{ site.data.members.others | jsonify }};
+    const member_names = new Set([...members_a, ...members_b, ...members_c].map(m => m.name));
+
+    // ==================== Build nodes and links ====================
+    const nodesMap = new Map();
+    const links = [];
+    const years_ = new Set(publications.map(p => p.date)).size;
+    const svgContainer = document.getElementById("svg-container");
+    const baseHeight = 400; // for up to 10 years
+    const extraHeightPerYear = 60;
+    const newHeight = baseHeight + Math.max(0, years_ - 10) * extraHeightPerYear;
+    svgContainer.style.height = newHeight + "px";
+
+    for (const pub of publications) {
+        const pubNode = { doi: pub.DOI, type: "paper", title: pub.title, url: pub.url, id: pub.title };
+        nodesMap.set(pub.title, pubNode);
+
+        // Year node
+        if (!nodesMap.has(pub.date)) {
+            nodesMap.set(pub.date, { id: pub.date, type: "year" });
+        }
+        links.push({ source: pub.title, target: pub.date });
+
+        // Author nodes
+        for (const author of pub.authors) {
+            if (!member_names.has(author)) continue;
+            if (!nodesMap.has(author)) {
+                nodesMap.set(author, { id: author, type: "person" });
+            }
+            links.push({ source: pub.title, target: author });
+        }
+    }
+
+    const nodes = Array.from(nodesMap.values());
+
+    const connectedNodes = new Map();
+    links.forEach(l => {
+        if(!connectedNodes.has(l.source)) connectedNodes.set(l.source, new Set());
+        if(!connectedNodes.has(l.target)) connectedNodes.set(l.target, new Set());
+        connectedNodes.get(l.source).add(l.target);
+        connectedNodes.get(l.target).add(l.source);
+    });
+
+    function getConnectedUpToYear(startId, connectedNodes, nodesMap) {
+        const visited = new Set();
+        const result = new Set();
+        const stack = [startId];
+
+        while (stack.length) {
+            const currentId = stack.pop();
+            if (visited.has(currentId)) continue;
+                visited.add(currentId);
+
+            const currentNode = nodesMap.get(currentId);
+            if (!currentNode) continue;
+
+            result.add(currentId);
+
+            if (currentNode.type === "year" ||
+                (currentNode.type === "person" && currentNode.id !== startId)
+            ) continue;
+
+            for (const neighborId of connectedNodes.get(currentId) || []) {
+                const neighborNode = nodesMap.get(neighborId);
+                if (!neighborNode) continue;
+
+                 if (
+                    neighborNode.type === "year" ||
+                    (currentNode.type === "person" && neighborNode.type === "paper") ||
+                    (currentNode.type === "paper" && neighborNode.type === "year") ||
+                    (currentNode.type === "paper" && neighborNode.type === "person")
+                ) {
+                    stack.push(neighborId);
+                }
+            }
+        }
+        return result;
+    }
+
+    nodes.forEach(node => {
+        if (node.type === "person") {
+            const connected = getConnectedUpToYear(node.id, connectedNodes, nodesMap);
+            connectedNodes.set(node.id, connected);
+        }
+    });
+
+    // ==================== D3 setup ====================
+    const svg = d3.select("svg");
+    const width = svg.node().getBoundingClientRect().width;
+    const height = svg.node().getBoundingClientRect().height;
+
+    const color = d3.scaleOrdinal()
+      .domain(["person", "paper", "year"])
+      .range(["#1f77b4", "#ff7f0e", "lightgray"]);
+
+    const nodeSize = d3.scaleOrdinal()
+      .domain(["person", "paper", "year"])
+      .range([12, 12, 20]);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(links).id(d => d.id).distance(1))
+      .force("charge", d3.forceManyBody().strength(-250))
+      .force("center", d3.forceCenter(width / 2, height / 2))
+      .force("collision", d3.forceCollide().radius(d => nodeSize(d.type) + 5));
+
+
+    // ==================== Draw links ====================
+    const link = svg.append("g")
+      .attr("stroke", "#ccc")
+      .attr("stroke-opacity", 0.6)
+      .selectAll("line")
+      .data(links)
+      .join("line")
+      .attr("stroke-width", 1.2);
+
+    // ==================== Draw nodes ====================
+    const node = svg.append("g")
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 1.5)
+      .selectAll("circle")
+      .data(nodes)
+      .join("circle")
+      .attr("r", d => nodeSize(d.type))
+      .attr("fill", d => color(d.type))
+      .call(selection => {
+        selection.filter(d => d.type !== "year")
+          .call(drag(simulation));
+      })
+      .on("click", (event, d) => {
+        if (d.type === "paper" && d.url) {
+          window.open(d.url, "_blank");
+        }
+      })
+      .on("mouseover", (event, d) => {
+          const related = connectedNodes.get(d.id) || new Set();
+          related.add(d.id);
+
+          node.style("opacity", n => related.has(n.id) ? 1 : 0.1);
+          node.style("color", n => related.has(n.id) ? "red" : "blue");
+          link.style("opacity", l => (related.has(l.source.id) && related.has(l.target.id)) ? 1 : 0.05);
+          labels.style("opacity", n => related.has(n.id) ? 1 : 0.1);
+        })
+        .on("mouseout", () => {
+          node.style("opacity", 1);
+          link.style("opacity", 0.6);
+          labels.style("opacity", 1);
+        })
+      .append("title")
+      .text(d => d.title || d.id);
+
+
+        const yearNodes = nodes.filter(d => d.type === "year");
+        const padding = 20;
+        const timelineWidth = height - padding*2;
+        const years = yearNodes.map(d => d.id).sort();
+        const n = years.length;
+        const verticalCount = Math.round(n * (height / (width + height)));
+        const horizontalCount = n - verticalCount;
+
+        yearNodes.forEach((d, i) => {
+          d.fx = 20;
+          d.fy = padding + i * (timelineWidth / (years.length - 1))
+        });
+
+        /*
+        yearNodes.forEach((d, i) => {
+          if (i < verticalCount) {
+            d.fx = padding;
+            d.fy = height - padding - i * ((height - 2 * padding) / (verticalCount - 1 || 1));
+          } else {
+            const j = i - verticalCount + 1;
+            d.fx = padding/2 + j * ((width - 2 * padding) / (horizontalCount || 1));
+            d.fy = padding;
+          }
+        });
+        */
+
+
+    // ==================== Add labels ====================
+    const labels = svg.append("g")
+      .selectAll("text")
+      .data(nodes)
+      .join("text")
+      .text(d => d.type === "paper" ?  "📄" + d.title.split(" ").slice(0, 2).join(" ") + ' ..' : d.id)
+      .attr("x", 6)
+      .attr("y", 3);
+
+    // ==================== Simulation loop ====================
+    simulation.on("tick", () => {
+      link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+      svg.selectAll("circle")
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+      labels
+        .attr("x", d => d.x)
+        .attr("y", d => d.y);
+    });
+
+    // ==================== Dragging ====================
+    function drag(simulation) {
+      function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+      function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+      }
+      function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+      return d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
+    }
+</script>

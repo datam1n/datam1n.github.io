@@ -30,7 +30,7 @@ def fetch_zotero(yml_path):
         "title": bib["data"].get("title", ""),
         "url": bib["data"].get("url", ""),
         "date": bib["data"].get("date", ""),
-        "creators": bib["data"].get("creators", []),
+        # "creators": bib["data"].get("creators", []),
         "authors": [
             f"{creator.get('firstName', '')} {creator.get('lastName', '')}"
             for creator in bib["data"].get("creators", [])

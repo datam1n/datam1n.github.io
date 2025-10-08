@@ -1,0 +1,43 @@
+.timeline {
+    position: relative;
+    list-style: none;
+    padding-left: 30px;
+    margin: 40px 0;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dee2e6;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+.timeline-dot {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: #007bff;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #007bff;
+}
+.timeline-content {
+    margin-left: 40px;
+    background: #f8f9fa;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.timeline-date {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 8px;
+    display: block;
+}
