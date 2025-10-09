@@ -153,15 +153,40 @@ permalink: "/graph"
       .domain(["person", "paper", "year"])
       .range(["#1f77b4", "#157f71", "lightgray"]);
 
+    /*
     const nodeSize = d3.scaleOrdinal()
       .domain(["person", "paper", "year"])
       .range([12, 12, 20]);
+     */
+
+    const personDegrees = {};
+    nodes.forEach(node => {
+        if (node.type === "person") {
+            personDegrees[node.id] = (connectedNodes.get(node.id) || new Set()).size;
+        }
+    });
+
+    const minDegree = Math.min(...Object.values(personDegrees));
+    const maxDegree = Math.max(...Object.values(personDegrees));
+
+    const personSizeScale = d3.scaleLog()
+      .domain([minDegree, maxDegree])
+      .range([12, 28]); // Adjust min/max size as needed
+
+    const nodeSize = d => {
+        if (d.type === "person")
+            return personSizeScale(personDegrees[d.id] || minDegree);
+        if (d.type == "year")
+            return 20;
+        if (d.type == "paper")
+            return 12;
+    };
 
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(1))
       .force("charge", d3.forceManyBody().strength(-250))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(d => nodeSize(d.type) + 5));
+      .force("collision", d3.forceCollide().radius(d => nodeSize(d) + 5));
 
 
     // ==================== Draw links ====================
@@ -180,7 +205,7 @@ permalink: "/graph"
       .selectAll("circle")
       .data(nodes)
       .join("circle")
-      .attr("r", d => nodeSize(d.type))
+      .attr("r", d => nodeSize(d))
       .attr("fill", d => color(d.type))
       .call(selection => {
         selection.filter(d => d.type !== "year")
