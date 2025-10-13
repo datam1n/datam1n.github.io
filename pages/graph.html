@@ -101,10 +101,10 @@ permalink: "/graph"
         connectedNodes.get(l.target).add(l.source);
     });
 
-    function getConnectedUpToYear(startId, connectedNodes, nodesMap) {
+    function getConnectedUpToYear(startNode, connectedNodes, nodesMap) {
         const visited = new Set();
         const result = new Set();
-        const stack = [startId];
+        const stack = [startNode.id];
 
         while (stack.length) {
             const currentId = stack.pop();
@@ -116,8 +116,8 @@ permalink: "/graph"
 
             result.add(currentId);
 
-            if (currentNode.type === "year" ||
-                (currentNode.type === "person" && currentNode.id !== startId)
+            if ((currentNode.type === "year" && startNode.type === "person" ) ||
+                (currentNode.type === "person" && currentNode.id !== startNode.id)
             ) continue;
 
             for (const neighborId of connectedNodes.get(currentId) || []) {
@@ -128,7 +128,8 @@ permalink: "/graph"
                     neighborNode.type === "year" ||
                     (currentNode.type === "person" && neighborNode.type === "paper") ||
                     (currentNode.type === "paper" && neighborNode.type === "year") ||
-                    (currentNode.type === "paper" && neighborNode.type === "person")
+                    (currentNode.type === "paper" && neighborNode.type === "person") ||
+                    (currentNode.type === "year" && neighborNode.type === "paper")
                 ) {
                     stack.push(neighborId);
                 }
@@ -138,8 +139,8 @@ permalink: "/graph"
     }
 
     nodes.forEach(node => {
-        if (node.type === "person") {
-            const connected = getConnectedUpToYear(node.id, connectedNodes, nodesMap);
+        if (node.type === "person" || node.type === "year") {
+            const connected = getConnectedUpToYear(node, connectedNodes, nodesMap);
             connectedNodes.set(node.id, connected);
         }
     });
@@ -236,7 +237,7 @@ permalink: "/graph"
 
         const yearNodes = nodes.filter(d => d.type === "year");
         const padding = 20;
-        const timelineWidth = height - padding*2;
+        const timelineWidth = height - padding*4;
         const years = yearNodes.map(d => d.id).sort();
         const n = years.length;
         const verticalCount = Math.round(n * (height / (width + height)));
@@ -244,7 +245,7 @@ permalink: "/graph"
 
         yearNodes.forEach((d, i) => {
           d.fx = 20;
-          d.fy = padding + i * (timelineWidth / (years.length - 1))
+          d.fy = 2*padding + i * (timelineWidth / (years.length - 1))
         });
 
         /*
