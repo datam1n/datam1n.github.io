@@ -17,16 +17,8 @@
   url: ''
 - DOI: 10.24193/subbi.2023.1.01
   authors:
-  - ' '
   - Attila Mester
-  date: '2023-07-20'
-  title: Malware Analysis and Static Call Graph Generation with Radare2
-  url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/85
-- DOI: 10.24193/subbi.2023.1.01
-  authors:
-  - ' '
-  - Attila Mester
-  date: '2023-07-20'
+  date: '2023'
   title: Malware Analysis and Static Call Graph Generation with Radare2
   url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/85
 - DOI: 10.1007/978-3-031-08530-7_45
