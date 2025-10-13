@@ -1,3 +1,10 @@
+- DOI: 10.5220/0012321100003636
+  authors:
+  - Levente Tempfli
+  - Csanád Sándor
+  date: '2024'
+  title: 'HierNet: Image Recognition with Hierarchical Convolutional Networks'
+  url: ''
 - DOI: 10.14428/esann/2021.ES2021-27
   authors:
   - Attila Mester
