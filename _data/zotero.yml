@@ -1,9 +1,41 @@
+- DOI: 10.1007/978-981-96-3531-3_9
+  authors:
+  - Attila Mester
+  - Zalán Bodó
+  - P. Vinod
+  - Mauro Conti
+  date: '2025'
+  title: Towards a Malware Family Classification Model Using Static Call Graph Instruction
+    Visualization
+  url: ''
 - DOI: 10.5220/0012321100003636
   authors:
   - Levente Tempfli
   - Csanád Sándor
   date: '2024'
   title: 'HierNet: Image Recognition with Hierarchical Convolutional Networks'
+  url: ''
+- DOI: 10.24193/subbi.2023.1.01
+  authors:
+  - ' '
+  - Attila Mester
+  date: '2023-07-20'
+  title: Malware Analysis and Static Call Graph Generation with Radare2
+  url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/85
+- DOI: 10.24193/subbi.2023.1.01
+  authors:
+  - ' '
+  - Attila Mester
+  date: '2023-07-20'
+  title: Malware Analysis and Static Call Graph Generation with Radare2
+  url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/85
+- DOI: 10.1007/978-3-031-08530-7_45
+  authors:
+  - Attila Mester
+  - Zalán Bodó
+  date: '2022'
+  title: Malware Classification Based on Graph Convolutional Neural Networks and Static
+    Call Graph Features
   url: ''
 - DOI: 10.14428/esann/2021.ES2021-27
   authors:
