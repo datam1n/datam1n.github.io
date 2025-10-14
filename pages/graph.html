@@ -1,5 +1,5 @@
 ---
-layout: graph
+layout: default
 title:
 description:
 permalink: "/graph"
@@ -36,20 +36,79 @@ permalink: "/graph"
         pointer-events: none;
         font-weight: bold;
     }
+    
+    /* Zoom Controls */
     .zoom-controls {
         position: absolute;
         top: 10px;
-        left: 10px;
+        right: 10px;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
+    
     .zoom-controls button {
-        margin: 2px;
-        padding: 6px 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
         font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #dee2e6;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        color: #2c5aa0;
+        outline: none;
+    }
+    
+    .zoom-controls button:hover {
+        background: #2c5aa0;
+        color: white;
+        transform: scale(1.05);
+    }
+    
+    
+    /* Graph Container Enhancements */
+    #svg-container {
+        background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                    linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                    linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                    linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .zoom-controls {
+            top: 10px;
+            right: 5px;
+            flex-direction: column;
+        }
+        
+        .zoom-controls button {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 </style>
 
+<!-- Graph Container with Zoom Controls -->
 <div id="svg-container">
+    <div class="zoom-controls">
+        <button id="zoomIn" title="Zoom In">+</button>
+        <button id="zoomOut" title="Zoom Out">−</button>
+        <button id="resetZoom" title="Reset Zoom">⌂</button>
+        <button id="exportGraph" title="Export Graph as SVG">⬇</button>
+    </div>
     <svg></svg>
 </div>
 
@@ -149,6 +208,18 @@ permalink: "/graph"
     const svg = d3.select("svg");
     const width = svg.node().getBoundingClientRect().width;
     const height = svg.node().getBoundingClientRect().height;
+    
+    // Add zoom behavior
+    const zoomBehavior = d3.zoom()
+        .scaleExtent([0.1, 4])
+        .on("zoom", (event) => {
+            mainGroup.attr("transform", event.transform);
+        });
+    
+    svg.call(zoomBehavior);
+    
+    // Create main group for all graph elements
+    const mainGroup = svg.append("g");
 
     const color = d3.scaleOrdinal()
       .domain(["person", "paper", "year"])
@@ -191,7 +262,7 @@ permalink: "/graph"
 
 
     // ==================== Draw links ====================
-    const link = svg.append("g")
+    const link = mainGroup.append("g")
       .attr("stroke", "#ccc")
       .attr("stroke-opacity", 0.6)
       .selectAll("line")
@@ -200,7 +271,7 @@ permalink: "/graph"
       .attr("stroke-width", 1.2);
 
     // ==================== Draw nodes ====================
-    const node = svg.append("g")
+    const node = mainGroup.append("g")
       .attr("stroke", "#fff")
       .attr("stroke-width", 1.5)
       .selectAll("circle")
@@ -213,6 +284,7 @@ permalink: "/graph"
           .call(drag(simulation));
       })
       .on("click", (event, d) => {
+        event.stopPropagation();
         if (d.type === "paper" && d.url) {
           window.open(d.url, "_blank");
         }
@@ -222,7 +294,6 @@ permalink: "/graph"
           related.add(d.id);
 
           node.style("opacity", n => related.has(n.id) ? 1 : 0.1);
-          node.style("color", n => related.has(n.id) ? "red" : "blue");
           link.style("opacity", l => (related.has(l.source.id) && related.has(l.target.id)) ? 1 : 0.05);
           labels.style("opacity", n => related.has(n.id) ? 1 : 0.1);
         })
@@ -263,7 +334,7 @@ permalink: "/graph"
 
 
     // ==================== Add labels ====================
-    const labels = svg.append("g")
+    const labels = mainGroup.append("g")
       .selectAll("text")
       .data(nodes)
       .join("text")
@@ -308,5 +379,47 @@ permalink: "/graph"
         .on("start", dragstarted)
         .on("drag", dragged)
         .on("end", dragended);
+    }
+
+    // ==================== Interactive Features ====================
+    
+    // Initialize export functionality
+    document.getElementById('exportGraph').addEventListener('click', exportGraph);
+    
+    // Zoom control functions
+    document.getElementById('zoomIn').addEventListener('click', () => {
+        svg.transition().duration(300).call(
+            zoomBehavior.scaleBy, 1.5
+        );
+    });
+    
+    document.getElementById('zoomOut').addEventListener('click', () => {
+        svg.transition().duration(300).call(
+            zoomBehavior.scaleBy, 1 / 1.5
+        );
+    });
+    
+    document.getElementById('resetZoom').addEventListener('click', () => {
+        svg.transition().duration(500).call(
+            zoomBehavior.transform,
+            d3.zoomIdentity
+        );
+    });
+
+    function exportGraph() {
+        // Create SVG data for export
+        const svgElement = document.querySelector('#svg-container svg');
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(svgElement);
+        const svgBlob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+        const svgUrl = URL.createObjectURL(svgBlob);
+        
+        const downloadLink = document.createElement('a');
+        downloadLink.href = svgUrl;
+        downloadLink.download = 'datamin_research_graph.svg';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        URL.revokeObjectURL(svgUrl);
     }
 </script>

@@ -1,7 +1,17 @@
 theme: jekyll-theme-cayman
-title:
-description:
+title: "DataMin Research Group"
+description: "Research Group at Babeș-Bolyai University"
+keywords: "DataMin, research group, data mining, machine learning, artificial intelligence, BBU, Babeș-Bolyai University, text mining, deep learning, robotics"
+url: "https://datam1n.github.io"
+baseurl: ""
+lang: "en-US"
+
 google_analytics: G-SX2JNM68GQ
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 collections:
   profiles:
     output: true

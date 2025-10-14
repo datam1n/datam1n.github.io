@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Welcome to DataMin"
-permalink: /posts/:year/:month/:day/:title/
+permalink: /posts/:year-:month-:day-:title/
 ---
 
 # Welcome

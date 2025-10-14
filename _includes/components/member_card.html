@@ -10,11 +10,11 @@
             <div style="margin-left: 0px;">
                 {% if include.member.image %}
                 <img src="{{ include.member.image }}" alt="{{ include.member.name }}"
-                     class="rounded-circle shadow-sm"
+                     class="rounded-circle shadow-sm lazy"
                      style="width: 100px; height: 100px; object-fit: cover;">
                 {% else %}
                 <img src="/assets/img/default_profile.png" alt="Default profile"
-                     class="rounded-circle shadow-sm"
+                     class="rounded-circle shadow-sm lazy"
                      style="width: 100px; height: 100px; object-fit: cover; opacity: 0.7;">
                 {% endif %}
             </div>

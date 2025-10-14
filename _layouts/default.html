@@ -2,21 +2,49 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
-
-{% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/general.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    <title>datam1n</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <!-- SEO Meta Tags -->
+    <title>datam1n</title>
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="author" content="{{ site.title }}">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if page.layout == 'profile' %}profile{% else %}website{% endif %}">
+    <meta property="og:image" content="{{ site.url }}/assets/img/datamin-og-template.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//scholar.google.com">
+    <link rel="dns-prefetch" href="//www.researchgate.net">
+    <link rel="dns-prefetch" href="//orcid.org">
+    <link rel="dns-prefetch" href="//dblp.org">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="all">
+    <link rel="stylesheet" href="{{ '/assets/css/general.css?v=' | append: site.github.build_revision | relative_url }}" media="all">
 
     {% include head-custom.html %}
 
@@ -30,9 +58,9 @@
     <header class="page-header" role="banner" style="display: flex">
         <div class="container" style="max-width: 100% !important;">
             <div class="row">
-                <div class="col-md-2"></div>
+                <div class="col-md-2" style="min-width:212px;"></div>
                 <div class="col-md-8" style="text-align: left;">
-                    <div class="main-content">
+                    <div id="header-content">
                     <h1><span class="text-dark">data</span><span class="text-secondary"><b>min</b></span></h1>
                     </div>
                 </div>
@@ -40,7 +68,7 @@
         </div>
 
 <!--      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>-->
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+<!--      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>-->
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
@@ -52,46 +80,111 @@
 
     <div class="container" style="max-width: 100% !important;">
         <div class="row">
-            <div class="col-md-2">
-                <div id="left-navbar" class="d-flex flex-column" style="width: 100%; margin-top: 20px; position: sticky; top: 20px; z-index: 1000;">
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.permalink == '/' %} active{% endif %}" href="/">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url contains '/members' %} active{% endif %}" href="/members">Members</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.permalink == '/publications' %} active{% endif %}" href="/publications">Publications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.permalink == '/projects' %} active {% endif %}" href="/projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url contains  '/posts' %} active {% endif %}" href="/posts">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.permalink == '/graph' %} active {% endif %}" href="/graph">Research graph</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.permalink == '/contact' %} active {% endif %}" href="/contact">Contact</a>
-                        </li>
-                    </ul>
+            <div class="col-md-2" style="min-width:212px;">
+                <div id="left-navbar" class="d-flex flex-column" style="
+                    width: 100%; margin-top: 20px; position: sticky; top: 20px; z-index: 1000;
+                    ">
+                    <nav role="navigation" aria-label="Main navigation">
+                        <ul class="nav nav-pills flex-column mb-auto">
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.permalink == '/' %} active{% endif %}" 
+                                   href="/"
+                                   aria-label="About DataMin Research Group"
+                                   {% if page.permalink == '/' %}aria-current="page"{% endif %}>
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.url contains '/members' %} active{% endif %}" 
+                                   href="/members"
+                                   aria-label="Research team members"
+                                   {% if page.url contains '/members' %}aria-current="page"{% endif %}>
+                                    Members
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.permalink == '/publications' %} active{% endif %}" 
+                                   href="/publications"
+                                   aria-label="Research publications and papers"
+                                   {% if page.permalink == '/publications' %}aria-current="page"{% endif %}>
+                                    Publications
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.permalink == '/projects' %} active {% endif %}" 
+                                   href="/projects"
+                                   aria-label="Current and past research projects"
+                                   {% if page.permalink == '/projects' %}aria-current="page"{% endif %}>
+                                    Projects
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.url contains  '/posts' %} active {% endif %}" 
+                                   href="/posts"
+                                   aria-label="Research blog and news"
+                                   {% if page.url contains '/posts' %}aria-current="page"{% endif %}>
+                                    Blog
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.permalink == '/graph' %} active {% endif %}" 
+                                   href="/graph"
+                                   aria-label="Interactive research collaboration graph"
+                                   {% if page.permalink == '/graph' %}aria-current="page"{% endif %}>
+                                    Research Graph
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if page.permalink == '/contact' %} active {% endif %}" 
+                                   href="/contact"
+                                   aria-label="Contact information"
+                                   {% if page.permalink == '/contact' %}aria-current="page"{% endif %}>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         <div class="col-md-8">
-            <main id="content" class="main-content" role="main">
+
+            <!-- Breadcrumb Navigation -->
+            {% unless page.permalink == '/' %}
+            <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" aria-label="Home">Home</a></li>
+                    {% assign url_parts = page.url | split: '/' %}
+                    {% assign path = '' %}
+                    {% for part in url_parts %}
+                        {% unless forloop.first or part == '' %}
+                            {% assign path = path | append: '/' | append: part %}
+                            {% if forloop.last %}
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    {% if page.title %}{{ page.title }}{% else %}{{ part | replace: '-', ' ' | capitalize }}{% endif %}
+                                </li>
+                            {% else %}
+                                <li class="breadcrumb-item">
+                                    <a href="{{ path }}">{{ part | replace: '-', ' ' | capitalize }}</a>
+                                </li>
+                            {% endif %}
+                        {% endunless %}
+                    {% endfor %}
+                </ol>
+            </nav>
+            {% endunless %}
+
+            <main id="content" class="main-content container" role="main" tabindex="-1">
 
               {{ content }}
 
-              <footer class="site-footer">
+            </main>
+
+            <footer class="site-footer">
                 {% if site.github.is_project_page %}
                   <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
                 {% endif %}
                 <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
               </footer>
-
-            </main>
         </div>
     </div>
 
