@@ -1,3 +1,11 @@
+- DOI: 10.5220/0013121900003890
+  authors:
+  - Adél Bajcsi
+  - Camelia Chira
+  - Annamária Szenkovits
+  date: '2025'
+  title: 'Evaluating ResNet-Based Self-Explanatory Models for Breast Lesion Classification:'
+  url: https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0013121900003890
 - DOI: 10.1007/978-981-96-3531-3_9
   authors:
   - Attila Mester
@@ -8,6 +16,19 @@
   title: Towards a Malware Family Classification Model Using Static Call Graph Instruction
     Visualization
   url: ''
+- DOI: 10.47745/ausi-2024-0007
+  authors:
+  - ' '
+  - Ábel Portik
+  - Adél Bajcsi
+  - ' '
+  - Annamária Szenkovits
+  - ' '
+  - Zalán Bodó
+  - ' '
+  date: '2024-10-01'
+  title: Exploring the Impact of Backbone Architecture on Explainable CNNs’ Interpretability
+  url: https://acta.sapientia.ro/content/docs/info16-1-07-918601.pdf
 - DOI: 10.5220/0012321100003636
   authors:
   - Levente Tempfli
@@ -15,6 +36,20 @@
   date: '2024'
   title: 'HierNet: Image Recognition with Hierarchical Convolutional Networks'
   url: ''
+- DOI: 10.36244/ICJ.2023.5.4
+  authors:
+  - Adél Bajcsi
+  - Anna Bajcsi
+  - Szabolcs Pável
+  - Ábel Portik
+  - Csanád Sándor
+  - Annamária Szenkovits
+  - Orsolya Vas
+  - Zalán Bodó
+  - Lehel Csató
+  date: '2023'
+  title: Comparative Study of Interpretable Image Classification Models
+  url: https://www.infocommunications.hu/Spec_5_4
 - DOI: 10.24193/subbi.2023.1.01
   authors:
   - Attila Mester
