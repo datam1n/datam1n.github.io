@@ -3,7 +3,7 @@
   - Zsombor Boga
   - Csanád Sándor
   - Péter Kovács
-  date: '2025-04-29'
+  date: '2025'
   title: A Multidimensional Particle Swarm Optimization-Based Algorithm for Brain
     MRI Tumor Segmentation
   url: https://www.mdpi.com/1424-8220/25/9/2800
@@ -68,7 +68,7 @@
   - Akos Balint
   - Csaba Sulyok
   - Karoly Simon
-  date: 2022-9-15
+  date: '2022'
   title: Estimating the Correctness of Exercises for Flat Feet Using Semantic Segmentation
   url: https://ieeexplore.ieee.org/document/10036266/
 - DOI: 10.5220/0010786700003124
@@ -102,6 +102,14 @@
   date: '2021'
   title: Fake News Detection Without External Knowledge
   url: https://link.springer.com/chapter/10.1007/978-3-030-68527-0_13
+- DOI: ''
+  authors:
+  - Sándor Csanád
+  - Pável Szabolcs
+  - Csató Lehel
+  date: '2020'
+  title: Pruning CNN’s with Linear Filter Ensembles
+  url: https://www.medra.org/servlet/aliasResolver?alias=iospressISBN&isbn=978-1-64368-100-9&spage=1435&doi=10.3233/FAIA200249
 - DOI: 10.1016/j.ifacol.2020.12.2656
   authors:
   - Csanád Sándor
@@ -136,14 +144,6 @@
   date: '2020'
   title: Finding Dense Supermasks in Randomly Initialized Neural Networks
   url: http://ceur-ws.org/Vol-2650/paper30.pdf
-- DOI: ''
-  authors:
-  - ' '
-  - ' '
-  - ' '
-  date: '2020'
-  title: Pruning CNN’s with Linear Filter Ensembles
-  url: https://www.medra.org/servlet/aliasResolver?alias=iospressISBN&isbn=978-1-64368-100-9&spage=1435&doi=10.3233/FAIA200249
 - DOI: ''
   authors:
   - Anna Kiss

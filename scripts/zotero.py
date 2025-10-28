@@ -25,20 +25,23 @@ def fetch_zotero(yml_path):
         start += limit
     print(f"Fetched {len(bibs)} items from Zotero. Writing to {yml_path}")
 
-    bibs = [{
-        "DOI": bib["data"].get("DOI", ""),
-        "title": bib["data"].get("title", ""),
-        "url": bib["data"].get("url", ""),
-        "date": bib["data"].get("date", ""),
-        # "creators": bib["data"].get("creators", []),
-        "authors": [
-            f"{creator.get('firstName', '')} {creator.get('lastName', '')}"
-            for creator in bib["data"].get("creators", [])
-            if creator.get("creatorType", "") == "author"]
-    } for bib in bibs]
+    bibs_to_yml = []
+    for bib in bibs:
+        bib_ = {
+            "DOI": bib["data"].get("DOI", ""),
+            "title": bib["data"].get("title", ""),
+            "url": bib["data"].get("url", ""),
+            "date": bib["data"].get("date", "").split("-")[0],
+            "authors": [
+                f"{creator.get('firstName', '')} {creator.get('lastName', '')}"
+                for creator in bib["data"].get("creators", [])
+                if creator.get("creatorType", "") == "author"]
+        }
+        bib_["authors"] = [a.strip() for a in bib_["authors"] if a.strip()]
+        bibs_to_yml.append(bib_)
 
     with open(yml_path, "w") as f:
-        yaml.dump(bibs, f, allow_unicode=True)
+        yaml.dump(bibs_to_yml, f, allow_unicode=True)
 
 
 if __name__ == "__main__":
