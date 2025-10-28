@@ -1,3 +1,12 @@
+- DOI: 10.3390/s25092800
+  authors:
+  - Zsombor Boga
+  - Csanád Sándor
+  - Péter Kovács
+  date: '2025-04-29'
+  title: A Multidimensional Particle Swarm Optimization-Based Algorithm for Brain
+    MRI Tumor Segmentation
+  url: https://www.mdpi.com/1424-8220/25/9/2800
 - DOI: 10.5220/0013121900003890
   authors:
   - Adél Bajcsi
@@ -52,6 +61,25 @@
   date: '2023'
   title: Malware Analysis and Static Call Graph Generation with Radare2
   url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/85
+- DOI: 10.1109/SISY56759.2022.10036266
+  authors:
+  - Balazs-Istvan Pelok
+  - Csanad Sandor
+  - Akos Balint
+  - Csaba Sulyok
+  - Karoly Simon
+  date: 2022-9-15
+  title: Estimating the Correctness of Exercises for Flat Feet Using Semantic Segmentation
+  url: https://ieeexplore.ieee.org/document/10036266/
+- DOI: 10.5220/0010786700003124
+  authors:
+  - Csanád Sándor
+  - Szabolcs Pável
+  - Lehel Csató
+  date: '2022'
+  title: 'Neural Network Pruning based on Filter Importance Values Approximated with
+    Monte Carlo Gradient Estimation:'
+  url: https://www.scitepress.org/DigitalLibrary/Link.aspx?doi=10.5220/0010786700003124
 - DOI: 10.1007/978-3-031-08530-7_45
   authors:
   - Attila Mester
@@ -74,6 +102,48 @@
   date: '2021'
   title: Fake News Detection Without External Knowledge
   url: https://link.springer.com/chapter/10.1007/978-3-030-68527-0_13
+- DOI: 10.1016/j.ifacol.2020.12.2656
+  authors:
+  - Csanád Sándor
+  - Szabolcs Pável
+  - Erik Wieser
+  - Andreea Blaga
+  - Péter Boda
+  - Andrea-Orsolya Fülöp
+  - Adrian Ursache
+  - Attila Zöld
+  - Anikó Kopacz
+  - Botond Lázár
+  - Károly Szabó
+  - Zoltán Tasnádi
+  - Botond Trinfa
+  - Lehel Csató
+  - Tegzes Dan Marius
+  - Pop M. Leontin
+  - Raluca Tarziu
+  - Mihai Zaha
+  - Sorin Grigorescu
+  - Lucian Busoniu
+  - Paula Raica
+  - Levente Tamas
+  date: '2020'
+  title: 'The ClujUAV student competition: A corridor navigation challenge with autonomous
+    drones'
+  url: https://linkinghub.elsevier.com/retrieve/pii/S2405896320334169
+- DOI: ''
+  authors:
+  - Csanád Sándor
+  date: '2020'
+  title: Finding Dense Supermasks in Randomly Initialized Neural Networks
+  url: http://ceur-ws.org/Vol-2650/paper30.pdf
+- DOI: ''
+  authors:
+  - ' '
+  - ' '
+  - ' '
+  date: '2020'
+  title: Pruning CNN’s with Linear Filter Ensembles
+  url: https://www.medra.org/servlet/aliasResolver?alias=iospressISBN&isbn=978-1-64368-100-9&spage=1435&doi=10.3233/FAIA200249
 - DOI: ''
   authors:
   - Anna Kiss
