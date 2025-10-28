@@ -104,9 +104,9 @@
   url: https://link.springer.com/chapter/10.1007/978-3-030-68527-0_13
 - DOI: ''
   authors:
-  - Sándor Csanád
-  - Pável Szabolcs
-  - Csató Lehel
+  - Csanád Sándor
+  - Szabolcs Pável
+  - Lehel Csató
   date: '2020'
   title: Pruning CNN’s with Linear Filter Ensembles
   url: https://www.medra.org/servlet/aliasResolver?alias=iospressISBN&isbn=978-1-64368-100-9&spage=1435&doi=10.3233/FAIA200249
@@ -238,6 +238,13 @@
   url: https://link.springer.com/chapter/10.1007/978-3-319-09903-3_14
 - DOI: ''
   authors:
+  - Zalán Bodó
+  - Lehel Csató
+  date: '2014'
+  title: Augmented hashing for semi-supervised scenarios
+  url: ''
+- DOI: ''
+  authors:
   - Botond Bócsi
   - Hunor Jakab
   - Lehel Csató
@@ -250,13 +257,6 @@
   - Lehel Csató
   date: '2014'
   title: Linear spectral hashing
-  url: ''
-- DOI: ''
-  authors:
-  - Zalán Bodó
-  - Lehel Csató
-  date: '2014'
-  title: Augmented hashing for semi-supervised scenarios
   url: ''
 - DOI: ''
   authors:
@@ -351,6 +351,16 @@
   title: Intelligent Models for Robotic Behavior, Decision Making and Environment
     Interaction
   url: ''
+- DOI: 10.1016/j.cageo.2010.05.008
+  authors:
+  - Remi Louis Barillec
+  - Ben Ingram
+  - Dan Cornford
+  - Lehel Csató
+  date: '2011'
+  title: 'Projected sequential Gaussian processes: {A} {C++} tool for interpolation
+    of large datasets with heterogeneous noise'
+  url: https://doi.org/10.1016/j.cageo.2010.05.008
 - DOI: ''
   authors:
   - Zalán Bodó
@@ -405,16 +415,6 @@
   title: Geodesic distance-based kernel construction for gaussian process value function
     approximation
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2011-3/c63-Jakab.pdf
-- DOI: 10.1016/j.cageo.2010.05.008
-  authors:
-  - Remi Louis Barillec
-  - Ben Ingram
-  - Dan Cornford
-  - Lehel Csató
-  date: '2011'
-  title: 'Projected sequential Gaussian processes: {A} {C++} tool for interpolation
-    of large datasets with heterogeneous noise'
-  url: https://doi.org/10.1016/j.cageo.2010.05.008
 - DOI: ''
   authors:
   - Botond Bócsi
