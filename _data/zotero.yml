@@ -1,3 +1,11 @@
+- DOI: 10.1007/s44427-025-00003-6
+  authors:
+  - Hanna-Georgina Lieb
+  - Tamás Kaszta
+  - Lehel Csató
+  date: '2025'
+  title: On Background Classes in Prototype-Based Architectures
+  url: https://doi.org/10.1007/s44427-025-00003-6
 - DOI: 10.3390/s25092800
   authors:
   - Zsombor Boga
@@ -25,6 +33,20 @@
   title: Towards a Malware Family Classification Model Using Static Call Graph Instruction
     Visualization
   url: ''
+- DOI: 10.1109/SISY62279.2024.10737523
+  authors:
+  - Hanna-Georgina Lieb
+  - Tamás Kaszta
+  - Lehel Csató
+  date: '2024'
+  title: Wavelet-Based Prototype Learning for Medical Image Classification
+  url: https://ieeexplore.ieee.org/document/10737523/
+- DOI: ''
+  authors:
+  - Zalán Bodó
+  date: '2024'
+  title: Álmodnak-e a Turing-gépek automatikus kódgenerálással?
+  url: https://www.researchgate.net/publication/383820047_Almodnak-e_a_Turing-gepek_automatikus_kodgeneralassal
 - DOI: 10.47745/ausi-2024-0007
   authors:
   - Ábel Portik
@@ -41,6 +63,22 @@
   date: '2024'
   title: 'HierNet: Image Recognition with Hierarchical Convolutional Networks'
   url: ''
+- DOI: 10.1109/SISY60376.2023.10417903
+  authors:
+  - Tamás Kaszta
+  - Hanna-Georgina Lieb
+  - Lehel Csató
+  date: '2023'
+  title: Wavelet-Based Prototype Networks
+  url: https://ieeexplore.ieee.org/document/10417903/
+- DOI: 10.2478/ausi-2023-0006
+  authors:
+  - Gergő Galiger
+  - Zalán Bodó
+  date: '2023'
+  title: Explainable patch-level histopathology tissue type detection with bag-of-local-features
+    models and data augmentation
+  url: https://acta.sapientia.ro/en/series/informatica/publications/volume-15-no-1-2023/explainable-patch-level-histopathology-tissue-type-detection-with-bag-of-local-features-models-and-data-augmentation
 - DOI: 10.36244/ICJ.2023.5.4
   authors:
   - Adél Bajcsi
@@ -71,6 +109,15 @@
   date: '2022'
   title: Estimating the Correctness of Exercises for Flat Feet Using Semantic Segmentation
   url: https://ieeexplore.ieee.org/document/10036266/
+- DOI: 10.24193/subbi.2022.1.01
+  authors:
+  - Anna Bajcsi
+  - Barbara Botos
+  - Péter Bajkó
+  - Zalán Bodó
+  date: '2022'
+  title: Can You Guess the Title? Generating Emoji Sequences for Movies
+  url: https://www.cs.ubbcluj.ro/~studia-i/journal/journal/article/view/75
 - DOI: 10.5220/0010786700003124
   authors:
   - Csanád Sándor
@@ -88,6 +135,27 @@
   title: Malware Classification Based on Graph Convolutional Neural Networks and Static
     Call Graph Features
   url: ''
+- DOI: 10.1109/ICCP53602.2021.9733549
+  authors:
+  - Laszlo Antal
+  - Zalan Bodo
+  date: '2021'
+  title: Feature axes orthogonalization in semantic face editing
+  url: https://ieeexplore.ieee.org/document/9733549/
+- DOI: 10.1109/SISY52375.2021.9582484
+  authors:
+  - Mihaly Gencsi
+  - Zalan Bodo
+  - Annamaria Szenkovits
+  date: '2021'
+  title: Compilation and Validation of a Large Fake News Dataset in Hungarian
+  url: https://ieeexplore.ieee.org/document/9582484/
+- DOI: ''
+  authors:
+  - Zalán Bodó
+  date: '2021'
+  title: Fake News Detection Without External Knowledge
+  url: https://link.springer.com/10.1007/978-3-030-68527-0_13
 - DOI: 10.14428/esann/2021.ES2021-27
   authors:
   - Attila Mester
@@ -104,9 +172,9 @@
   url: https://link.springer.com/chapter/10.1007/978-3-030-68527-0_13
 - DOI: ''
   authors:
-  - Sándor Csanád
-  - Pável Szabolcs
-  - Csató Lehel
+  - Csanád Sándor
+  - Szabolcs Pável
+  - Lehel Csató
   date: '2020'
   title: Pruning CNN’s with Linear Filter Ensembles
   url: https://www.medra.org/servlet/aliasResolver?alias=iospressISBN&isbn=978-1-64368-100-9&spage=1435&doi=10.3233/FAIA200249
@@ -238,6 +306,13 @@
   url: https://link.springer.com/chapter/10.1007/978-3-319-09903-3_14
 - DOI: ''
   authors:
+  - Zalán Bodó
+  - Lehel Csató
+  date: '2014'
+  title: Augmented hashing for semi-supervised scenarios
+  url: ''
+- DOI: ''
+  authors:
   - Botond Bócsi
   - Hunor Jakab
   - Lehel Csató
@@ -250,13 +325,6 @@
   - Lehel Csató
   date: '2014'
   title: Linear spectral hashing
-  url: ''
-- DOI: ''
-  authors:
-  - Zalán Bodó
-  - Lehel Csató
-  date: '2014'
-  title: Augmented hashing for semi-supervised scenarios
   url: ''
 - DOI: ''
   authors:
@@ -351,6 +419,16 @@
   title: Intelligent Models for Robotic Behavior, Decision Making and Environment
     Interaction
   url: ''
+- DOI: 10.1016/j.cageo.2010.05.008
+  authors:
+  - Remi Louis Barillec
+  - Ben Ingram
+  - Dan Cornford
+  - Lehel Csató
+  date: '2011'
+  title: 'Projected sequential Gaussian processes: {A} {C++} tool for interpolation
+    of large datasets with heterogeneous noise'
+  url: https://doi.org/10.1016/j.cageo.2010.05.008
 - DOI: ''
   authors:
   - Zalán Bodó
@@ -405,16 +483,6 @@
   title: Geodesic distance-based kernel construction for gaussian process value function
     approximation
   url: http://www.cs.ubbcluj.ro/ studia-i/contents/2011-3/c63-Jakab.pdf
-- DOI: 10.1016/j.cageo.2010.05.008
-  authors:
-  - Remi Louis Barillec
-  - Ben Ingram
-  - Dan Cornford
-  - Lehel Csató
-  date: '2011'
-  title: 'Projected sequential Gaussian processes: {A} {C++} tool for interpolation
-    of large datasets with heterogeneous noise'
-  url: https://doi.org/10.1016/j.cageo.2010.05.008
 - DOI: ''
   authors:
   - Botond Bócsi
@@ -454,6 +522,25 @@
   url: ''
 - DOI: ''
   authors:
+  - Zalán Bodó
+  date: '2009'
+  title: Semi-supervised Learning with Kernels
+  url: https://www.researchgate.net/publication/330541785_Semi-supervised_learning_with_kernels
+- DOI: ''
+  authors:
+  - Zsolt Minier
+  date: '2009'
+  title: Feature Selection in Text Categorization Using l1-Regularized SVMs
+  url: http://www.cs.ubbcluj.ro/~studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
+- DOI: ''
+  authors:
+  - Zalán Bodó
+  - Zsolt Minier
+  date: '2009'
+  title: Semi-supervised learning with SVMs
+  url: http://www.cs.ubbcluj.ro/~studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
+- DOI: ''
+  authors:
   - Lehel Csató
   - Zalán Bodó
   date: '2009'
@@ -468,18 +555,6 @@
   url: https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2009-107.pdf
 - DOI: ''
   authors:
-  - Zsolt Minier
-  date: '2009'
-  title: Feature Selection in Text Categorization Using l1-Regularized SVMs
-  url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
-- DOI: ''
-  authors:
-  - Zalán Bodó
-  date: '2009'
-  title: Semi-supervised Learning with Kernels
-  url: http://www.cs.ubbcluj.ro/ zbodo/thesis/thesis.pdf
-- DOI: ''
-  authors:
   - Hunor Jakab
   - Lehel Csató
   date: '2009'
@@ -489,16 +564,9 @@
   authors:
   - Zalán Bodó
   - Zsolt Minier
-  date: '2009'
-  title: Semi-supervised learning with SVMs
-  url: http://www.cs.ubbcluj.ro/ studia-i/contents/2009-kept/Studia-2009-Kept-2-KPD.pdf
-- DOI: ''
-  authors:
-  - Zalán Bodó
-  - Zsolt Minier
   date: '2008'
   title: On supervised and semi-supervised k-nearest neighbor algorithms
-  url: http://www.cs.ubbcluj.ro/ studia-i/contents/2008-2/07-Bodo.pdf
+  url: http://www.cs.ubbcluj.ro/~studia-i/contents/2008-2/07-Bodo.pdf
 - DOI: ''
   authors:
   - Botond Bócsi
